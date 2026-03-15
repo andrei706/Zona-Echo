@@ -29,24 +29,24 @@
         <h1 class="oswald">Zona Echo</h1>
         <nav>
             <ul class="meniu">
-                <li>Acasa
+                <li><i class="fa-solid fa-house"></i> Acasa
                     <ul>
                         <li><a href="#welcome">Welcome</a></li>
                     </ul>
                 </li>
-                <li><a href="#produse">Produse</a>
+                <li><a href="#produse"><i class="fa-solid fa-headphones"></i> Produse</a>
                     <ul>
                         <li><a href="#promotii">Promotii</a></li>
                     </ul>
                 </li>
-                <li>Învață
+                <li><i class="fa-solid fa-graduation-cap"></i> Învață
                     <ul>
                         <li><a href="#dictionar">Termeni tehnici</a></li>
                         <li><a href="#informative-videos">Cum functioneaza castile</a></li>
                         <li><a href="#index-intrebari">Întrebări frecvente</a></li>
                     </ul>
                 </li>
-                <li>Despre noi
+                <li><i class="fa-solid fa-users"></i> Despre noi
                     <ul>
                         <li><a href="#orar">Program cu publicul</a></li>
                         <li><a href="#anunturi">Anunturi</a></li>
@@ -204,15 +204,15 @@
                     <p>Vă recomandăm aceste videoclipuri pentru a înțelege mai bine tehnologia din spatele căștilor audio.</p>
             
                     <div class="container-iframe">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/GQWLuAEelcc" name="ifr-video"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         <div class="taburi-iframe">
                             <a href="https://www.youtube.com/embed/_W2z-ikIgM0" target="ifr-video">Principiul de funcționare</a>
                             <a href="https://www.youtube.com/embed/DS4T_1UyCHw" target="ifr-video">Open-back vs Closed-back</a>
                             <a href="https://www.youtube.com/embed/GQWLuAEelcc" target="ifr-video">Despre Impedanță</a><br/>
                         </div>
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/GQWLuAEelcc" name="ifr-video"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                 </section>
             
@@ -265,77 +265,66 @@
             </section>
             <section id="orar">
                 <h2>Program de lucru</h2>
-                <table id="tab-orar">
-                    <caption>Programul de funcționare Zona Echo</caption>
-            
-                    <thead>
-                        <tr>
-                            <th>Tip Zi</th>
-                            <th>Ziua Săptămânii</th>
-                            <th>Interval Orar</th>
-                            <th>Observații</th>
-                        </tr>
-                    </thead>
-            
-                    <tbody>
-                        <tr>
-                            <td rowspan="5" class="alb">Zile Lucrătoare</td>
-                            <td>Luni</td>
-                            <td>09:00 - 18:00</td>
-                            <td>Program Normal</td>
-                        </tr>
-                        <tr>
-                            <td>Marți</td>
-                            <td>09:00 - 18:00</td>
-                            <td>Program Normal</td>
-                        </tr>
-                        <tr>
-                            <td>Miercuri</td>
-                            <td>09:00 - 20:00</td>
-                            <td>Program Prelungit</td>
-                        </tr>
-                        <tr>
-                            <td>Joi</td>
-                            <td>09:00 - 18:00</td>
-                            <td>Program Normal</td>
-                        </tr>
-                        <tr>
-                            <td>Vineri</td>
-                            <td>09:00 - 17:00</td>
-                            <td>Program Scurt</td>
-                        </tr>
-                        <tr>
-                            <td rowspan="2" class="alb">Weekend</td>
-                            <td>Sâmbătă</td>
-                            <td>10:00 - 14:00</td>
-                            <td>Doar ridicări comenzi</td>
-                        </tr>
-                        <tr>
-                            <td>Duminică</td>
-                            <td>Închis</td>
-                            <td>-</td>
-                        </tr>
-                    </tbody>
-            
-                    <tfoot>
-                        <tr>
-                            <td colspan="4">Suportul tehnic telefonic este disponibil doar în timpul programului</td>
-                        </tr>
-                    </tfoot>
-                </table>
-                <p>Ne găsiți la</p>
-                <address>Strada Academiei, Nr. 14,<br>
-                Sector 1, București,<br>
-                Cod Poștal 010014</address>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2848.8842997291954!2d26.0995867!3d44.4355355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1ff472f47f047%3A0x493984726f0235f9!2sFacultatea%20de%20Matematic%C4%83%20%C8%99i%20Informatic%C4%83!5e0!3m2!1sro!2sro!4v1772899590301!5m2!1sro!2sro" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                <div>
-                    <p>Grad de ocupare magazin (clienți) în weekend-uri:</p>
-                    <meter id="ocupare-magazin" min="0" max="50" low="10" high="35" optimum="20" value="36">
-                        42 din 50
-                    </meter>
-                    <span> 42 persoane (Aglomerat)</span>
+                <div class="tabel-container">
+                    <table id="tab-orar">
+                        <caption>Programul de funcționare Zona Echo</caption>
+                
+                        <thead>
+                            <tr>
+                                <th>Tip Zi</th>
+                                <th>Ziua Săptămânii</th>
+                                <th>Interval Orar</th>
+                                <th>Observații</th>
+                            </tr>
+                        </thead>
+                
+                        <tbody>
+                            <tr>
+                                <td rowspan="5" class="alb">Zile Lucrătoare</td>
+                                <td>Luni</td>
+                                <td>09:00 - 18:00</td>
+                                <td>Program Normal</td>
+                            </tr>
+                            <tr>
+                                <td>Marți</td>
+                                <td>09:00 - 18:00</td>
+                                <td>Program Normal</td>
+                            </tr>
+                            <tr>
+                                <td>Miercuri</td>
+                                <td>09:00 - 20:00</td>
+                                <td>Program Prelungit</td>
+                            </tr>
+                            <tr>
+                                <td>Joi</td>
+                                <td>09:00 - 18:00</td>
+                                <td>Program Normal</td>
+                            </tr>
+                            <tr>
+                                <td>Vineri</td>
+                                <td>09:00 - 17:00</td>
+                                <td>Program Scurt</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2" class="alb">Weekend</td>
+                                <td>Sâmbătă</td>
+                                <td>10:00 - 14:00</td>
+                                <td>Doar ridicări comenzi</td>
+                            </tr>
+                            <tr>
+                                <td>Duminică</td>
+                                <td>Închis</td>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                
+                        <tfoot>
+                            <tr>
+                                <td colspan="4">Suportul tehnic telefonic este disponibil doar în timpul programului</td>
+                            </tr>
+                        </tfoot>
+                    </table>
                 </div>
-            
                 <p><strong>Atenție!!!</strong> În prima zi a fiecărei luni magazinul este închis pentru inventar.</p>
             </section>
             <section id="despre-brand">
@@ -452,7 +441,7 @@
         </div>
     </main>
     <footer>
-        <a href="#" title="mergi sus" id="link-top">link sus</a>
+        <a href="#" id="link-top" title="Revino la începutul paginii"><div id="triunghi"><span class="sageata-cod">&#129081;</span></div></a>
         <address>
             Contactează-ne:
             Telefon: <a href="tel:+40712345678">+40 712 345 678</a><br>

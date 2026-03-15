@@ -59,7 +59,7 @@ ul.meniu li:hover ul{
 ul.meniu li{
     width: var(--latime-buton);
     height: var(--inaltime-buton);
-    background-color: var(--culoare-funndal);
+    background-color: var(--culoare-fundal);
     border: 1px solid var(--culoare-contur);
     color: black;
     text-align: center;
