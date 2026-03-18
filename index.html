@@ -9,14 +9,17 @@
     <meta name="description" content="Casti audio la preturi rezonabile pentru utilizatori obișnuiți și fanatici de sunet!">
     <meta name="keywords" content="Zona Echo, ce este Zona Echo, casti, casti wireless, boxă portabilă, magazin audio, livrare la domiciliu, istoric Zona Echo, cine este Zona Echo, de ce este Zona Echo, casti gaming, casti bluetooth, casti in-ear, casti over-ear, casti hi-fi, casti noise cancelling, boxe portabile, boxe PC, subwoofer, boxe surround, soundbar, oferta">
 
-    <link rel="icon" type="image/png" href="./resurse/imagini/favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="./resurse/imagini/favicon/favicon.svg" />
-    <link rel="shortcut icon" href="./resurse/imagini/favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="./resurse/imagini/favicon/apple-touch-icon.png" />
-    <link rel="manifest" href="./resurse/imagini/favicon/site.webmanifest" />
+    <link rel="icon" type="image/png" href="/resurse/imagini/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/resurse/imagini/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/resurse/imagini/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/resurse/imagini/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/resurse/imagini/favicon/site.webmanifest" />
 
-    <link rel="stylesheet" href="./resurse/css/general.css" type="text/css" />
-    <link rel="stylesheet" href="./resurse/css/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/resurse/css/reset.css" type="text/css" />
+    <link rel="stylesheet" href="/resurse/css/general.css" type="text/css" />
+    <link rel="stylesheet" href="/resurse/css/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/resurse/css/nav700.css" type="text/css" media="screen and (max-width:700px)"/>
+    <link rel="stylesheet" href="/resurse/css/nav1000.css" type="text/css" media="screen and (max-width:1000px)"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />  
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,36 +28,42 @@
 </head>
 
 <body>
-    <header>
-        <h1 class="oswald">Zona Echo</h1>
+    <header>    
+        <h1 class="oswald">Zona Echo<i class="fa-solid fa-music fa-bounce"></i></h1>
         <nav>
+            <label id="hamburger" for="ch-menu">
+                <img src="resurse/imagini/Hamburger_icon_alb.png" alt="menu">
+            </label>
+            <input type ="checkbox" id="ch-menu"/>
             <ul class="meniu">
                 <li><i class="fa-solid fa-house"></i> Acasa
                     <ul>
                         <li><a href="#welcome">Welcome</a></li>
                     </ul>
                 </li>
-                <li><a href="#produse"><i class="fa-solid fa-headphones"></i> Produse</a>
+                <li><i class="fa-solid fa-headphones"></i> Produse
                     <ul>
+                        <li><a href="#produse">Toate produsele</a></li>
                         <li><a href="#promotii">Promotii</a></li>
                     </ul>
                 </li>
                 <li><i class="fa-solid fa-graduation-cap"></i> Învață
                     <ul>
                         <li><a href="#dictionar">Termeni tehnici</a></li>
-                        <li><a href="#informative-videos">Cum functioneaza castile</a></li>
+                        <li><a href="#informative-videos">Videoclipuri</a></li>
                         <li><a href="#index-intrebari">Întrebări frecvente</a></li>
                     </ul>
                 </li>
                 <li><i class="fa-solid fa-users"></i> Despre noi
                     <ul>
-                        <li><a href="#orar">Program cu publicul</a></li>
+                        <li><a href="#orar">Program</a></li>
                         <li><a href="#anunturi">Anunturi</a></li>
                         <li><a href="#despre-brand">Istoricul companiei</a></li>
                     </ul>
                 </li>
             </ul>
         </nav>
+        
     </header>
     <main> 
         <div id="grid-pagina">
@@ -67,25 +76,25 @@
         
         
                 <blockquote>"Half of the storytelling ability is sound."</blockquote>
-                <p>— Joe Herrington</p>
+                <cite>— Joe Herrington</cite>
                 <p class="intro">Vă mulțumim că ne vizitați site-ul. Ce este Zona Echo? Este un magazin audio unde îți poți îmbunătăți experiența de entertainment! Acestea sunt recomandările noastre!</p>
         
-                <div class="intro-oferte">
-                    <div>Căști wireless</div>
-                    <div>Căști Hi-Fi</div>
-                    <div>Soundbar</div>
-                    <div>Boxă portabilă</div>
-                    <div>Căști gaming</div>
-                </div>
+                <ul class="intro-oferte">
+                    <li>Căști wireless</li>
+                    <li>Căști Hi-Fi</li>
+                    <li>Soundbar</li>
+                    <li>Boxă portabilă</li>
+                    <li>Căști gaming</li>
+                </ul>
 
                 <p class="anunt-intro">Puteți încerca produse în showroom-ul nostru și livrăm la domiciliu!</p>
                 <div id="dv-prezentare-1">
                     <div id="dv-prezentare">
                         <figure id="fig0" class="fg-img">
                             <picture>
-                                <source srcset="./resurse/imagini/speaker-image2-300w.jpg" media="(max-width:700px)" />
-                                <source srcset="./resurse/imagini/speaker-image2-640w.jpg" media="(max-width:1200px)" />
-                                <img src="./resurse/imagini/speaker-image2.jpg" 
+                                <source srcset="/resurse/imagini/speaker-image2-300w.jpg" media="(max-width:700px)" />
+                                <source srcset="/resurse/imagini/speaker-image2-640w.jpg" media="(max-width:1200px)" />
+                                <img src="/resurse/imagini/speaker-image2.jpg" 
                                     alt="text"
                                     title="Set de boxe pentru acasă" />
                             </picture>
@@ -415,8 +424,8 @@
                     <figure id="fig1" class="fg-img">
                         <a href="resurse/imagini/earphones.jpg">
                             <picture>
-                                <source srcset="./resurse/imagini/earphones300w.jpg" media="(max-width: 700px)">
-                                <source srcset="./resurse/imagini/earphones450w.jpg" media="(max-width: 1000px)">
+                                <source srcset="/resurse/imagini/earphones300w.jpg" media="(max-width: 700px)">
+                                <source srcset="/resurse/imagini/earphones450w.jpg" media="(max-width: 1000px)">
                                 <img src="resurse/imagini/earphones600w.jpg" alt="Căști in-ear profesionale" title="Earphones Model">
                             </picture>
                         </a>
@@ -425,8 +434,8 @@
             
                     <figure id="fig2" class="fg-img">
                         <picture>
-                            <source srcset="./resurse/imagini/headphones300w.jpg" media="(max-width: 700px)">
-                            <source srcset="./resurse/imagini/headphones450w.jpg" media="(max-width: 1000px)">
+                            <source srcset="/resurse/imagini/headphones300w.jpg" media="(max-width: 700px)">
+                            <source srcset="/resurse/imagini/headphones450w.jpg" media="(max-width: 1000px)">
                             <img src="resurse/imagini/headphones600w.jpg" alt="Căști over-ear" title="Headphones Model">
                         </picture>
                         <figcaption>
@@ -438,6 +447,9 @@
                     </figure>
                 </div>
             </section>
+            <section id="lista-utilizatori-online"><h2>Utilizatori Online</h2><p>Lorem Ipsum</p></section>
+            <section id="statistici"><h2>Statistici</h2><p>Lorem Ipsum</p></section>
+            <section id="despre-site-server"><h2>Despre Site și Server</h2><p>Lorem Ipsum</p></section>
         </div>
     </main>
     <footer>
@@ -452,8 +464,12 @@
                 Sector 1, București,<br>
                 Cod Poștal 010014
             </a><br>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2848.8842997291954!2d26.0995867!3d44.4355355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1ff472f47f047%3A0x493984726f0235f9!2sFacultatea%20de%20Matematic%C4%83%20%C8%99i%20Informatic%C4%83!5e0!3m2!1sro!2sro!4v1772899590301!5m2!1sro!2sro" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            
+            <div class="container-iframe-maps">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2848.8842997291954!2d26.0995867!3d44.4355355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1ff472f47f047%3A0x493984726f0235f9!2sFacultatea%20de%20Matematic%C4%83%20%C8%99i%20Informatic%C4%83!5e0!3m2!1sro!2sro!4v1772899590301!5m2!1sro!2sro"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
             <i class="fa-solid fa-envelope"></i> E-mail: <a href="mailto:contact@zonaecho.ro">contact@zonaecho.ro</a><br>
     
             WhatsApp: <a href="https://wa.me/40712345678" target="_blank">Chat pe WhatsApp</a>

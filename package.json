@@ -1,0 +1,77 @@
+{
+  "name": "zona-echo",
+  "version": "1.0.0",
+  "description": "magazin de periferice audio",
+  "keywords": [
+    "Zona",
+    "Echo",
+    "ce",
+    "este",
+    "Zona",
+    "Echo",
+    "casti",
+    "casti",
+    "wireless",
+    "boxă",
+    "portabilă",
+    "magazin",
+    "audio",
+    "livrare",
+    "la",
+    "domiciliu",
+    "istoric",
+    "Zona",
+    "Echo",
+    "cine",
+    "este",
+    "Zona",
+    "Echo",
+    "de",
+    "ce",
+    "este",
+    "Zona",
+    "Echo",
+    "casti",
+    "gaming",
+    "casti",
+    "bluetooth",
+    "casti",
+    "in-ear",
+    "casti",
+    "over-ear",
+    "casti",
+    "hi-fi",
+    "casti",
+    "noise",
+    "cancelling",
+    "boxe",
+    "portabile",
+    "boxe",
+    "PC",
+    "subwoofer",
+    "boxe",
+    "surround",
+    "soundbar",
+    "oferta"
+  ],
+  "homepage": "https://github.com/andrei706/Zona-Echo#readme",
+  "bugs": {
+    "url": "https://github.com/andrei706/Zona-Echo/issues"
+  },
+  "repository": {
+    "type": "git",
+
+    "url": "git+https://github.com/andrei706/Zona-Echo.git"
+  },
+  "license": "ISC",
+  "author": "Diaconescu Andrei-Teodor",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "ejs": "^5.0.1",
+    "express": "^5.2.1"
+  }
+}

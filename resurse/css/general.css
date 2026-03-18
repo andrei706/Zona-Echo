@@ -1,3 +1,53 @@
+h1, h2, h3, h4, h5, h6, strong, b {
+    font-weight: bold;
+}
+
+h1, h2, h3, h4, h5, h6{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+th {
+    font-weight: bold;
+}
+
+ul {
+    list-style-type: disc; 
+    padding-left: 25px;    
+    margin-bottom: 10px;   
+}
+
+ol {
+    list-style-type: decimal;
+    padding-left: 25px;
+    margin-bottom: 10px;
+}
+
+blockquote {
+    margin: 20px 40px;             
+    padding: 10px 20px;            
+    border-left: 5px solid var(--culoare-contur); 
+    background-color: rgba(70, 165, 242, 0.1);    
+    font-style: italic;            
+    line-height: 1.6;
+}
+
+cite {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+address {
+    font-style: italic;      
+    line-height: 1.6;        
+    display: block;          
+    margin-bottom: 20px;     
+    color: var(--culoare-text);
+}
+
+
 html {
     font-size: 18px; 
     transition: font-size 0.5s ease;
@@ -15,10 +65,13 @@ body{
     --culoare-text: #221C61;
     --culoare-highlight: #466FF2; 
     --culoare-detalii: #46DBF2;
+
+    --grosime-border-buton: 2px;
+    --gap-grid: 25px;   
     
-    font-size: 1rem; 
+    font-size: 1rem;
     line-height: 1.5;
-    --margine-pagina: 100px;
+    --margine-pagina: 75px;
     background-color: var(--culoare-fundal);
     color: var(--culoare-text);
 }
@@ -34,45 +87,24 @@ p{
 
 #grid-pagina{
     display: grid;
-    gap: 25px;
+    gap: var(--gap-grid);
     /*La slide-ul 49 in curs avem unitatile de masura*/
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-areas: "welcome welcome welcome welcome"
-                          "welcome welcome welcome welcome"
-                            "produse produse produse produse"
-                            "produse produse produse produse"
-                            "anunturi orar orar promotii"
-                            "index-intrebari index-intrebari despre-brand despre-brand"
-                            "informative-videos informative-videos dictionar dictionar"
-                            "galerie-statica galerie-statica galerie-statica galerie-statica"; 
+    grid-template-areas: "welcome welcome welcome welcome" /*zona1 zona1 zona1 zona1*/
+                          "welcome welcome welcome welcome" /*zona1 zona1 zona1 zona1*/
+                            "produse produse produse galerie-statica" /*zona8 zona8 zona8 zona8*/
+                            "informative-videos informative-videos dictionar dictionar" /*zona8 zona8 zona8 zona8*/
+                            "informative-videos informative-videos index-intrebari index-intrebari" /*zona8 zona8 zona8 zona8*/
+                            "anunturi orar orar promotii" 
+                            "lista-utilizatori-online statistici despre-site-server despre-site-server"
+                            "despre-brand despre-brand despre-brand despre-brand"; 
 }
-
-/* #grid-pagina{
-    display: grid;
-    gap: 25px;
-    grid-template-columns: 2fr 1fr 2fr;
-    grid-template-areas: "welcome welcome welcome"
-                        "produse produse promotii"
-                        "anunturi orar orar"
-                        "despre-brand orar orar"
-                        "dictionar dictionar galerie-statica"
-                        "informative-videos index-intrebari index-intrebari";
-} */
 
 #grid-pagina > *{
     border: 1px solid var(--culoare-contur);
     box-shadow: 0px 0px 10px var(--culoare-contur);
-    padding: 10px;
+    padding: 30px;
 }
-
-figure{ /**//**//**//**//*Resetare spatiere*/
-    margin: 0; 
-}
-
-figure > img{ /**//**//**//**//*Resetare spatiere*/
-    width: 100%; 
-}
-
 
 .oswald{
   font-family: "Oswald", sans-serif;
@@ -114,15 +146,68 @@ figure > img{ /**//**//**//**//*Resetare spatiere*/
 #index-intrebari{
     grid-area: index-intrebari;
 }
+#lista-utilizatori-online{
+    grid-area: lista-utilizatori-online;
+}
+#statistici{
+    grid-area: statistici;
+}
+#despre-site-server{
+    grid-area: despre-site-server;
+}
+
+/*Stilizare imagini*/
+
+figure > img {
+    width: 100%;
+    height: auto;
+    min-width: 100px;
+    margin: 0;
+}
+
+#welcome img{
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border: 4px solid var(--culoare-contur);
+    background-color: var(--culoare-fundal);
+    box-shadow: 0px 0px 10px var(--culoare-contur);
+}
+
+#galerie-statica img{
+    border: 4px solid var(--culoare-contur);
+    background-color: var(--culoare-fundal);
+    height: auto;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0px 0px 10px var(--culoare-contur);
+}
+
+/*Stilizare iframe*/
 
 .container-iframe{
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     height: 315px;
-    width: fit-content;
-    width: 600px;
+    width: 100%;
     gap:0;
+}
+
+iframe{
+    width: 100%;
+}
+
+.container-iframe > iframe{
+    border: 4px solid var(--culoare-contur);
+    background-color: var(--culoare-fundal);
+    z-index: 10;
+}
+
+.container-iframe-playlist > iframe{
+    border: 4px solid var(--culoare-contur);
 }
 
 .taburi-iframe{
@@ -130,25 +215,33 @@ figure > img{ /**//**//**//**//*Resetare spatiere*/
     flex-direction: column;
     align-items: stretch;
     height: 100%;
+    width: 25%; 
     justify-content: flex-start;
-    border: 1px solid var(--culoare-contur);
 }
 
 .taburi-iframe > a{
     display: flex;
     padding: 10px;
     background-color: var(--culoare-fundal);
-    border: 1px solid var(--culoare-contur);
+    border: var(--grosime-border-buton) solid var(--culoare-contur);
     color: var(--culoare-text);
     text-decoration: none;
+    text-align: center;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     margin-bottom: 5px;
     transition: all 0.1s linear;
+    transform: translateX(-10px);
 }
 .taburi-iframe > a:hover{ /*fiu direct, din acest motiv punem sageata*/
     background-color: var(--culoare-contur);
+    transform: translateX(0px);
     color: white;
+}
+
+.container-iframe-maps{
+    max-width: 600px;
+    height:auto;
 }
 
 /*Stilizare tabel*/
@@ -162,7 +255,7 @@ figure > img{ /**//**//**//**//*Resetare spatiere*/
 #tab-orar{
     border-collapse: collapse;
     width: 100%;
-    border: 1px double var(--culoare-contur);
+    border: 5px double var(--culoare-contur);
     background-color: var(--culoare-fundal);
 }
 
@@ -185,7 +278,7 @@ figure > img{ /**//**//**//**//*Resetare spatiere*/
     background-color: var(--culoare-contur); 
     color: var(--culoare-fundal);                
     border-width: 5px;       
-    transition: all 0.33s ease;               
+    transition: all 0.75s ease;               
 }
 
 #tab-orar thead {
@@ -226,7 +319,7 @@ figure > img{ /**//**//**//**//*Resetare spatiere*/
     width: 100%;
     height: 100%;
     background-color: var(--culoare-fundal);
-    border: 3px solid var(--culoare-contur); 
+    border: 2px solid var(--culoare-contur); 
     
     border-top-left-radius: 50%;
     border-top-right-radius: 50%;
@@ -243,7 +336,8 @@ figure > img{ /**//**//**//**//*Resetare spatiere*/
     display: inline-block;
     color: var(--culoare-detalii);
     font-size: 4.5em;
-    transition: transform 0.5s ease-in-out;
+    transform: translateY(6px);
+    transition: transform 0.3s ease-in-out;
 }
 
 #link-top:hover {
@@ -255,7 +349,7 @@ figure > img{ /**//**//**//**//*Resetare spatiere*/
 }
 
 #link-top:hover .sageata-cod {
-    transform: scale(1.3);
+    transform: translateY(6px) scale(1.3);
     color: white;
 }
 
@@ -270,6 +364,7 @@ figure > img{ /**//**//**//**//*Resetare spatiere*/
 
     #grid-pagina {
         grid-template-columns: 1fr 1fr; 
+        --gap-grid: 15px;
         grid-template-areas: 
             "welcome welcome"
             "promotii produse"
@@ -279,13 +374,19 @@ figure > img{ /**//**//**//**//*Resetare spatiere*/
             "dictionar dictionar"
             "informative-videos informative-videos"
             "galerie-statica galerie-statica"
-            "index-intrebari index-intrebari";
+            "index-intrebari index-intrebari"
+            "lista-utilizatori-online statistici"
+            "despre-site-server despre-site-server";
     }
 }
 
 @media screen and (max-width:800px) {
     #grid-pagina{
         display: block;
+        --gap-grid: 10px;
+    }
+    #grid-pagina > *{
+        padding: 15px;
     }
     html{
         font-size: 15px; 
@@ -296,6 +397,31 @@ figure > img{ /**//**//**//**//*Resetare spatiere*/
     }
     body{
         --margine-pagina: 20px;
+    }
+
+    /*Pentru ecran mic, butoanele au fost asezate sub iframe */
+    .container-iframe {
+        flex-direction: column;
+        height: auto;
+    }
+    .container-iframe > iframe {
+        height: 315px;
+        width: 100%;
+    }
+    .taburi-iframe {
+        width: 100%;
+        flex-direction: row;
+        height: auto;
+        justify-content: center;
+    }
+    .taburi-iframe > a {
+        flex: 1;
+        text-align: center;
+        margin: 0 5px;
+        transform: translateX(0px);
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
     }
 }
 
