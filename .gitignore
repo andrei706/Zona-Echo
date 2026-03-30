@@ -1,0 +1,6 @@
+# .gitignore pentru proiectul Zona-Echo
+node_modules/
+temp/
+logs/
+backup/
+fisiere_uploadate/

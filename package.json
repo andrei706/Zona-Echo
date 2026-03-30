@@ -60,7 +60,6 @@
   },
   "repository": {
     "type": "git",
-
     "url": "git+https://github.com/andrei706/Zona-Echo.git"
   },
   "license": "ISC",
@@ -72,6 +71,7 @@
   },
   "dependencies": {
     "ejs": "^5.0.1",
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "sass": "^1.98.0"
   }
 }
