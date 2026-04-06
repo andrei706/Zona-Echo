@@ -36,6 +36,7 @@ function afisareEroare(res, identificator, titlu, text, imagine){
     //daca sunt setate titlu, text, imagine, le folosim, 
     //altfel folosim cele din fisierul json pentru eroarea gasita
     //daca nu o gasim, afisam eroarea default
+
     let errDefault = obGlobal.obErori.eroare_default
     res.render("pagini/eroare", {
         imagine: imagine || eroare?.imagine || errDefault.imagine,

@@ -66,6 +66,9 @@ body{
     --culoare-highlight: #466FF2; 
     --culoare-detalii: #46DBF2;
 
+    --culoare-vizitat: #6a1b9a; 
+    --c1: rgba(70, 219, 242, 0.6);
+
     --grosime-border-buton: 2px;
     --gap-grid: 25px;   
     
@@ -84,6 +87,69 @@ main{
 p{
     border: 1px solid var(--culoare-fundal);
 }
+
+/* Stilizare linkuri */
+a:visited {
+    color: var(--culoare-vizitat);
+}
+
+p > a[href^="http"]::before {
+    content: "⮳";
+    font-size: 1.5rem; 
+    margin-right: 5px;
+    display: inline-block;
+    vertical-align: middle;
+    transition: color 0.3s ease;
+}
+
+p > a[href^="http"]:hover::before {
+    color: var(--culoare-highlight);
+}
+
+main p > a {
+    position: relative;
+    text-decoration: none;
+    padding: 2px 4px;
+    color: inherit;
+
+   background-image: radial-gradient(
+        circle,
+        var(--c1) 0%,
+        var(--c1) 40%, 
+        transparent 80%,
+        transparent 100%
+    );
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 0 0; 
+    transition: background-size 0.5s ease;
+}
+
+main a:hover {
+    background-size: 100% 100%;
+}
+
+a:active {
+    border: 1px solid var(--culoare-text);
+}
+
+/*Stilizare Video-VTT*/
+.video-principal {
+    width: 80%;       /* Lățime în procente */
+    min-width: 300px; /* Lățime minimă */
+    max-width: 800px; /* Lățime maximă */
+    height: auto;
+    display: block;
+    margin: 20px auto;
+}
+
+video::cue {
+    background-color: rgba(70, 219, 242, 0.7); /* c1 deschis cu puțină transparență */
+    color: #221C61; /* c2 închis din variabilele tale */
+    font-family: Arial, sans-serif;
+}
+
+/*Stilizare grid*/
 
 .banner-proiect {
     display: none;
