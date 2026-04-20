@@ -1,0 +1,59 @@
+{
+	"cale_galerie": "resurse/imagini/galerie",
+	"imagini": [
+		{
+			"cale_imagine": "boxa_portabila.jpg",
+			"titlu": "Boxă Portabilă",
+			"descriere": "O boxă rezistentă la apă, ideală pentru excursii și activități în aer liber.",
+			"timp": "08:00-21:00"
+		},
+		{
+			"cale_imagine": "boxa_premium.jpg",
+			"titlu": "Boxă Premium Sound",
+			"descriere": "Sistem audio de înaltă fidelitate pentru o experiență acustică desăvârșită.",
+			"timp": "10:00-21:00"
+		},
+		{
+			"cale_imagine": "boxa.jpg",
+			"titlu": "Boxă Audio",
+			"descriere": "Design clasic și sunet clar pentru orice tip de încăpere.",
+			"timp": "12:00-20:00"
+		},
+		{
+			"cale_imagine": "casti_cu_mic.jpg",
+			"titlu": "Căști cu Microfon",
+			"descriere": "Căști confortabile cu microfon integrat, perfecte pentru apeluri și gaming.",
+			"timp": "09:00-21:00"
+		},
+		{
+			"cale_imagine": "casti_pe_masa.jpg",
+			"titlu": "Căști Studio",
+			"descriere": "Echipament profesional pentru monitorizare audio și producție muzicală.",
+			"timp": "15:00-22:00"
+		},
+		{
+			"cale_imagine": "casti_sony_natura.jpg",
+			"titlu": "Căști Sony Outdoor",
+			"descriere": "Tehnologie Noise Cancelling pentru audiție fără întreruperi în natură.",
+			"timp": "07:00-12:00"
+		},
+		{
+			"cale_imagine": "casti_sony.jpg",
+			"titlu": "Căști Sony Wireless",
+			"descriere": "Libertate totală de mișcare cu o autonomie a bateriei de până la 30 ore.",
+			"timp": "11:00-21:00"
+		},
+		{
+			"cale_imagine": "casti_vechi_pe_masa.jpg",
+			"titlu": "Căști Retro",
+			"descriere": "Un stil vintage combinat cu tehnologia audio modernă.",
+			"timp": "18:00-23:59"
+		},
+		{
+			"cale_imagine": "jbl.jpg",
+			"titlu": "Boxă JBL",
+			"descriere": "Putere și bas profund într-un format compact și ușor de transportat.",
+			"timp": "00:00-23:59"
+		}
+	]
+}

@@ -1,0 +1,12 @@
+<% for(let imag of locals.imagini) { %>
+    <figure class="fg-img">
+        <picture>
+            <source srcset="<%- imag.fisier_mic %>" media="(max-width:600px)">
+            <source srcset="<%- imag.fisier_mediu %>" media="(max-width:1100px)">
+            <img src="<%- imag.fisier %>" alt="<%- imag.alt ? imag.alt : imag.titlu %>" title="<%- imag.descriere %>">
+        </picture>
+        <figcaption>
+            <%- imag.titlu %> - <%- imag.descriere %>
+        </figcaption>
+    </figure>
+    <% } %>

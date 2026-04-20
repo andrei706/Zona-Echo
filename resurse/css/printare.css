@@ -1,8 +1,9 @@
-
 /*css-printare*/
 @media print {
-    html, body {
-        width: 210mm;
+
+    html,
+    body {
+        width: 250mm;
         background-color: white;
         color: black;
         font-size: 12pt;
@@ -16,18 +17,29 @@
         margin-top: 1.5cm;
     }
 
-    #grid-pagina > * {
+    #grid-pagina>* {
         border: 1px solid #ccc;
         margin-top: 20px;
         box-shadow: none;
         border: 2px solid var(--culoare-contur);
         margin-bottom: 10px;
         padding: 15px;
-        page-break-inside: avoid; 
+        page-break-inside: avoid;
+    }
+
+    #grid-pagina p {
+        border: none;
     }
 
     /*ascundem media*/
-    img, video, iframe, figure, figcaption, .container-iframe, #link-top {
+    img,
+    video,
+    iframe,
+    figure,
+    figcaption,
+    .container-iframe,
+    #link-top,
+    .video-principal {
         display: none !important;
     }
 
@@ -55,7 +67,6 @@
 
     .meniu li {
         display: list-item !important;
-        list-style-type: disc;
         margin-left: 2cm;
         float: none !important;
         width: auto !important;
@@ -72,7 +83,7 @@
 
     .banner-proiect {
         position: absolute;
-        top: 25cm; 
+        top: 25cm;
         left: 15%;
         width: 70%;
         text-align: center;
@@ -82,8 +93,8 @@
 
     #watermark {
         display: block !important;
-        position: fixed; 
-        bottom: 0; 
+        position: fixed;
+        bottom: 0;
         right: 0;
         width: 4cm;
         height: 1cm;
@@ -98,7 +109,7 @@
 
     #watermark::after {
         content: "DIACONESCU \A ANDREI-TEODOR";
-        white-space: pre; 
+        white-space: pre;
         font-size: 10pt;
         line-height: 0.5cm;
         display: block;

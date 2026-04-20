@@ -10,7 +10,6 @@ nav {
   width: 40px;
   height: 40px;
   height: 30px;
-  cursor: pointer;
 }
 #hamburger span {
   display: block;
@@ -49,11 +48,9 @@ ul.meniu {
   padding: 0;
   margin: 0;
 }
-ul.meniu li, ul.meniu ul {
+ul.meniu li,
+ul.meniu ul {
   width: 100%;
-}
-ul.meniu .wrapper-buton .strat-underline {
-  opacity: 0;
 }
 ul.meniu .wrapper-buton .strat-umbra,
 ul.meniu .text-home {
@@ -104,5 +101,3 @@ ul.meniu .text-home {
     transform: scale(1) rotate(0deg);
   }
 }
-
-/*# sourceMappingURL=nav700.css.map */

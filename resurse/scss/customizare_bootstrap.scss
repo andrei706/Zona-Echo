@@ -1,0 +1,30 @@
+@use '../../node_modules/bootstrap/scss/bootstrap.scss' with ($primary: #46A5F2,
+    $secondary: #466FF2,
+
+    $body-color: #221C61,
+
+    $grid-breakpoints: (md: 800px,
+        lg: 1200px),
+
+    $border-radius: 12px,
+    $border-radius-sm: 8px,
+    $border-radius-lg: 18px,
+
+    $h1-font-size: 2.8rem,
+    $h2-font-size: 2.2rem,
+
+    $font-family-base: ('Oswald', sans-serif),
+
+    $border-width: 4px);
+
+body {
+    background-color: var(--culoare-fundal);
+}
+
+a {
+    text-decoration: none;
+}
+
+figure {
+    margin: 0;
+}
