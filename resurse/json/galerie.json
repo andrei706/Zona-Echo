@@ -5,54 +5,96 @@
 			"cale_imagine": "boxa_portabila.jpg",
 			"titlu": "Boxă Portabilă",
 			"descriere": "O boxă rezistentă la apă, ideală pentru excursii și activități în aer liber.",
-			"timp": "08:00-21:00"
+			"timp": "00:00-11:59"
 		},
 		{
 			"cale_imagine": "boxa_premium.jpg",
 			"titlu": "Boxă Premium Sound",
 			"descriere": "Sistem audio de înaltă fidelitate pentru o experiență acustică desăvârșită.",
-			"timp": "10:00-21:00"
+			"timp": "00:00-23:59"
 		},
 		{
 			"cale_imagine": "boxa.jpg",
 			"titlu": "Boxă Audio",
 			"descriere": "Design clasic și sunet clar pentru orice tip de încăpere.",
-			"timp": "12:00-20:00"
+			"timp": "12:00-23:59"
 		},
 		{
 			"cale_imagine": "casti_cu_mic.jpg",
 			"titlu": "Căști cu Microfon",
 			"descriere": "Căști confortabile cu microfon integrat, perfecte pentru apeluri și gaming.",
-			"timp": "09:00-21:00"
+			"timp": "00:00-11:59"
 		},
 		{
 			"cale_imagine": "casti_pe_masa.jpg",
 			"titlu": "Căști Studio",
 			"descriere": "Echipament profesional pentru monitorizare audio și producție muzicală.",
-			"timp": "15:00-22:00"
+			"timp": "00:00-23:59"
 		},
 		{
 			"cale_imagine": "casti_sony_natura.jpg",
 			"titlu": "Căști Sony Outdoor",
 			"descriere": "Tehnologie Noise Cancelling pentru audiție fără întreruperi în natură.",
-			"timp": "07:00-12:00"
+			"timp": "12:00-23:59"
 		},
 		{
 			"cale_imagine": "casti_sony.jpg",
 			"titlu": "Căști Sony Wireless",
 			"descriere": "Libertate totală de mișcare cu o autonomie a bateriei de până la 30 ore.",
-			"timp": "11:00-21:00"
+			"timp": "00:00-23:59"
 		},
 		{
 			"cale_imagine": "casti_vechi_pe_masa.jpg",
 			"titlu": "Căști Retro",
 			"descriere": "Un stil vintage combinat cu tehnologia audio modernă.",
-			"timp": "18:00-23:59"
+			"timp": "00:00-11:59"
 		},
 		{
 			"cale_imagine": "jbl.jpg",
 			"titlu": "Boxă JBL",
 			"descriere": "Putere și bas profund într-un format compact și ușor de transportat.",
+			"timp": "00:00-23:59"
+		},
+		{
+			"cale_imagine": "boxe_in_intuneric.jpg",
+			"titlu": "Boxe în Întuneric",
+			"descriere": "Sistem audio iluminat spectaculos pentru atmosferă de petrecere.",
+			"timp": "12:00-23:59"
+		},
+		{
+			"cale_imagine": "casti_beats.jpg",
+			"titlu": "Căști Beats",
+			"descriere": "Căști cu un design iconic și bas puternic pentru pasionații de muzică.",
+			"timp": "00:00-11:59"
+		},
+		{
+			"cale_imagine": "casti_fluffy.jpg",
+			"titlu": "Căști Pufoase",
+			"descriere": "Confort maxim și un aspect unic cu aceste căști călduroase.",
+			"timp": "12:00-23:59"
+		},
+		{
+			"cale_imagine": "casti_in_aer.jpg",
+			"titlu": "Căști Plutitoare",
+			"descriere": "Design inovator și sunet perfect într-o formă care sfidează gravitația.",
+			"timp": "00:00-07:59"
+		},
+		{
+			"cale_imagine": "casti_in_intuneric.jpg",
+			"titlu": "Căști RGB Gaming",
+			"descriere": "Iluminare în întuneric pentru un setup de gaming impresionant.",
+			"timp": "08:00-15:59"
+		},
+		{
+			"cale_imagine": "jbl_speaker_mini.jpg",
+			"titlu": "JBL Speaker Mini",
+			"descriere": "Boxă ultra-compactă cu o performanță uimitoare de luat oriunde.",
+			"timp": "16:00-23:59"
+		},
+		{
+			"cale_imagine": "oakywood-phone-8435754_1280.jpg",
+			"titlu": "Dock Oakywood",
+			"descriere": "Accesorii din lemn natural pentru a-ți completa biroul elegant.",
 			"timp": "00:00-23:59"
 		}
 	]
