@@ -22,10 +22,12 @@ ul.meniu {
         transform-origin: center top;
         position: absolute;
         z-index: 100;
+        top: 100%;
+        left: -1px;
     }
 
     li {
-        cursor: pointer;
+        position: relative;
         width: $latime-buton;
         height: $inaltime-buton;
         background-color: var(--culoare-fundal);
@@ -43,42 +45,21 @@ ul.meniu {
 
             .strat-text {
                 position: relative;
-                z-index: 1; 
+                z-index: 1;
                 width: 100%;
                 height: 100%;
             }
 
             .strat-umbra {
+                /*Pentru umbra de la textul acasă*/
                 position: absolute;
-                top: -100%; 
+                top: -100%;
                 left: 0;
                 width: 100%;
                 height: 100%;
-                z-index: 2; 
-                color: rgb(255, 255, 255, 0.8); 
-                transition: top $timp-tranzitie ease-out;
-                pointer-events: none; 
-            }
-
-            .strat-underline {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%; 
-                display: flex;
-                align-items: center;
-                justify-content: center;
                 z-index: 2;
-                background-color: transparent;
-                pointer-events: none;
-
-                u {
-                    opacity: 0;
-                    text-decoration-color: currentColor;
-                    text-underline-offset: 4px;
-                    transition: $timp-tranzitie ease-in-out;
-                }
+                color: rgb(255, 255, 255, 0.8);
+                transition: top $timp-tranzitie ease-out;
             }
         }
 
@@ -86,15 +67,11 @@ ul.meniu {
             background-color: var(--culoare-contur);
             color: white;
 
-            .wrapper-buton .strat-umbra {
+            .strat-umbra {
                 top: 0;
             }
 
-            // .wrapper-buton .strat-underline u{
-            //     opacity: 1;
-            // }
-
-            & > ul {
+            &>ul {
                 display: block;
             }
         }
@@ -103,14 +80,17 @@ ul.meniu {
 
     li li {
         &:hover {
-            .wrapper-buton .strat-underline u {
-                opacity: 1;
+            a {
+                text-decoration-color: currentColor;
             }
         }
     }
 
     a {
-        text-decoration: none;
+        text-decoration: underline;
+        text-decoration-color: transparent;
+        text-underline-offset: 4px;
+        transition: text-decoration-color $timp-tranzitie ease-in-out;
         color: inherit;
         display: block;
         width: 100%;
@@ -118,11 +98,13 @@ ul.meniu {
     }
 }
 
-#hamburger, #ch-menu {
+#hamburger,
+#ch-menu {
     display: none;
 }
 
-.text-icon, .imag-icon {
+.text-icon,
+.imag-icon {
     display: inline-block;
 }
 
@@ -131,9 +113,11 @@ ul.meniu {
         opacity: 0;
         transform: scale(1, 0);
     }
+
     50% {
         transform: scale(1, 1);
     }
+
     100% {
         opacity: 1;
         transform: scale(1, 1);

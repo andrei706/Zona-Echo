@@ -1,0 +1,13 @@
+<div id="galerie-animata" class="galerie-a">
+    <div class="grid-galerie-<%= locals.nrImagRand %>">
+        <% for(let imag of locals.imagini_animata) { %>
+            <figure>
+                <picture>
+                    <source srcset="<%- imag.fisier_mediu %>" media="(max-width:1000px)" />
+                    <img src="<%- imag.fisier %>" alt="imagine">
+                </picture>
+                <figcaption><%- imag.titlu %></figcaption>
+            </figure>
+        <% } %>
+    </div>
+</div>

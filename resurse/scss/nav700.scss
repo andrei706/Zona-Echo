@@ -1,23 +1,22 @@
 $z-index-meniu: 10;
 $inaltime-icon-burger: 30px;
 $timp-decomprimare: 0.3s;
-$t-delay: 0.3s; 
+$t-delay: 0.3s;
 $gap-bare: 10px;
 $offset-top: 5px;
 
-nav{
-    position: relative; 
-    min-height: 40px; // Trebuie modificat pentru inconita de hamburger
+nav {
+    position: relative;
+    min-height: 40px;
     display: flex;
 }
 
 #hamburger {
     display: block;
     position: relative;
-    width: 40px; 
+    width: 40px;
     height: 40px;
     height: $inaltime-icon-burger;
-    cursor: pointer;
 
     span {
         display: block;
@@ -26,16 +25,18 @@ nav{
         height: 4px;
         background-color: var(--culoare-text);
         border-radius: 2px;
-        opacity: 0; 
+        opacity: 0;
 
-        &:nth-child(1) { 
-            top: $offset-top; 
+        &:nth-child(1) {
+            top: $offset-top;
         }
-        &:nth-child(2) { 
-            top: $offset-top + 4px + $gap-bare; 
+
+        &:nth-child(2) {
+            top: $offset-top + 4px + $gap-bare;
         }
-        &:nth-child(3) { 
-            top: $offset-top + (4px + $gap-bare) * 2; 
+
+        &:nth-child(3) {
+            top: $offset-top + (4px + $gap-bare) * 2;
         }
 
         animation: aparitie-bara 0.6s forwards;
@@ -49,18 +50,16 @@ nav{
 }
 
 ul.meniu {
-    display: none; 
+    display: none;
     list-style-type: none;
     padding: 0;
     margin: 0;
-    
-    li, ul {
+
+    li,
+    ul {
         width: 100%;
     }
 
-    .wrapper-buton .strat-underline{
-        opacity: 0;
-    }
     .wrapper-buton .strat-umbra,
     .text-home {
         display: none;
@@ -68,31 +67,34 @@ ul.meniu {
 }
 
 #ch-menu {
-    display: none; 
+    display: none;
 
-    &:checked + ul.meniu {
+    &:checked+ul.meniu {
         display: block;
         position: absolute;
         z-index: $z-index-meniu;
         width: 100%;
         top: 100%;
         background-color: black;
+
         li .text-de-comprimat {
             animation: animatie_submeniu_mobil $timp-decomprimare ease-out forwards;
-            transform-origin: center; 
+            transform-origin: center;
         }
     }
 }
 
 @keyframes animatie_submeniu_mobil {
     0% {
-        transform: scale(0, 1); 
+        transform: scale(0, 1);
     }
+
     50% {
         transform: scale(0.5, 1);
     }
+
     100% {
-        transform: scale(1, 1); 
+        transform: scale(1, 1);
     }
 }
 
@@ -102,11 +104,13 @@ ul.meniu {
         background-color: var(--culoare-detalii);
         transform: scale(0) rotate(90deg);
     }
+
     50% {
         opacity: 0.5;
         background-color: var(--culoare-highlight);
         transform: scale(1.2) rotate(-15deg);
     }
+
     100% {
         opacity: 1;
         background-color: var(--culoare-fundal);

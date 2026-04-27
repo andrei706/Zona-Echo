@@ -1,0 +1,17 @@
+<% for(let i=0; i < locals.imagini.length; i++) { let imag = locals.imagini[i]; %>
+    <figure class="fg-img" onclick="this.classList.toggle('show-attribution')">
+        <picture>
+            <source srcset="<%- imag.fisier_mic %>" media="(max-width:600px)">
+            <source srcset="<%- imag.fisier_mediu %>" media="(max-width:1100px)">
+            <img src="<%- imag.fisier %>" alt="<%- imag.alt ? imag.alt : imag.titlu %>" title="<%- imag.descriere %>">
+        </picture>
+        <figcaption>
+            <%- imag.titlu %> - <%- imag.descriere %>
+        </figcaption>
+        <% if(imag.html_atribuire) { %>
+            <div class="atribuire-box" onclick="event.stopPropagation();">
+                <%- imag.html_atribuire %>
+            </div>
+        <% } %>
+    </figure>
+<% } %>

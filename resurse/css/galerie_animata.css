@@ -1,0 +1,677 @@
+#sectiune-galerie-animata {
+  padding-left: var(--padding-intern, 1rem);
+  padding-right: var(--padding-intern, 1rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#galerie-animata {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 5rem;
+  /* Border image  */
+  border: 20px solid transparent;
+  border-image: url("../imagini/galerie/border.webp") 30 round;
+  /* Oprim animatia cand venim cu cursorul pe galerie */
+}
+#galerie-animata:hover [class*=grid-galerie] {
+  animation-play-state: paused;
+}
+
+#galerie-animata .grid-galerie-4 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  width: 100%;
+  height: 100%;
+  animation: gal_animata_zoom_4 20s linear infinite alternate;
+}
+
+#galerie-animata .grid-galerie-4 figure {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  position: relative;
+}
+
+#galerie-animata .grid-galerie-4 picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#galerie-animata .grid-galerie-4 figcaption {
+  position: absolute;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.7);
+  width: 100%;
+  text-align: center;
+  padding: 2.5px 0;
+  font-size: 0.6rem;
+  box-sizing: border-box;
+}
+
+#galerie-animata .grid-galerie-4 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@keyframes gal_animata_zoom_4 {
+  0% {
+    transform: scale(1);
+    transform-origin: 20% 0%;
+    animation-timing-function: ease-in-out;
+  }
+  11.5% {
+    transform: scale(2);
+    transform-origin: 0% 0%;
+  }
+  19.2307692308% {
+    transform: scale(2);
+    transform-origin: 0% 0%;
+    animation-timing-function: ease-in-out;
+  }
+  24.999% {
+    transform: scale(1);
+    transform-origin: 0% 0%;
+  }
+  25% {
+    transform: scale(1);
+    transform-origin: 45% 0%;
+    animation-timing-function: ease-in-out;
+  }
+  36.5% {
+    transform: scale(2);
+    transform-origin: 100% 0%;
+  }
+  44.2307692308% {
+    transform: scale(2);
+    transform-origin: 100% 0%;
+    animation-timing-function: ease-in-out;
+  }
+  49.999% {
+    transform: scale(1);
+    transform-origin: 100% 0%;
+  }
+  50% {
+    transform: scale(1);
+    transform-origin: 45% 100%;
+    animation-timing-function: ease-in-out;
+  }
+  61.5% {
+    transform: scale(2);
+    transform-origin: 100% 100%;
+  }
+  69.2307692308% {
+    transform: scale(2);
+    transform-origin: 100% 100%;
+    animation-timing-function: ease-in-out;
+  }
+  74.999% {
+    transform: scale(1);
+    transform-origin: 100% 100%;
+  }
+  75% {
+    transform: scale(1);
+    transform-origin: 20% 100%;
+    animation-timing-function: ease-in-out;
+  }
+  86.5% {
+    transform: scale(2);
+    transform-origin: 0% 100%;
+  }
+  94.2307692308% {
+    transform: scale(2);
+    transform-origin: 0% 100%;
+    animation-timing-function: ease-in-out;
+  }
+  99.999% {
+    transform: scale(1);
+    transform-origin: 0% 100%;
+  }
+}
+#galerie-animata .grid-galerie-9 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  width: 100%;
+  height: 100%;
+  animation: gal_animata_zoom_9 45s linear infinite alternate;
+}
+
+#galerie-animata .grid-galerie-9 figure {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  position: relative;
+}
+
+#galerie-animata .grid-galerie-9 picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#galerie-animata .grid-galerie-9 figcaption {
+  position: absolute;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.7);
+  width: 100%;
+  text-align: center;
+  padding: 1.6666666667px 0;
+  font-size: 0.4rem;
+  box-sizing: border-box;
+}
+
+#galerie-animata .grid-galerie-9 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@keyframes gal_animata_zoom_9 {
+  0% {
+    transform: scale(1);
+    transform-origin: 20% 0%;
+    animation-timing-function: ease-in-out;
+  }
+  4.5555555556% {
+    transform: scale(3);
+    transform-origin: 0% 0%;
+  }
+  8.547008547% {
+    transform: scale(3);
+    transform-origin: 0% 0%;
+    animation-timing-function: ease-in-out;
+  }
+  11.1101111111% {
+    transform: scale(1);
+    transform-origin: 0% 0%;
+  }
+  11.1111111111% {
+    transform: scale(1);
+    transform-origin: 45% 0%;
+    animation-timing-function: ease-in-out;
+  }
+  15.6666666667% {
+    transform: scale(3);
+    transform-origin: 100% 0%;
+  }
+  19.6581196581% {
+    transform: scale(3);
+    transform-origin: 100% 0%;
+    animation-timing-function: ease-in-out;
+  }
+  22.2212222222% {
+    transform: scale(1);
+    transform-origin: 100% 0%;
+  }
+  22.2222222222% {
+    transform: scale(1);
+    transform-origin: 0% 0%;
+    animation-timing-function: ease-in-out;
+  }
+  26.7777777778% {
+    transform: scale(3);
+    transform-origin: 50% 0%;
+  }
+  30.7692307692% {
+    transform: scale(3);
+    transform-origin: 50% 0%;
+    animation-timing-function: ease-in-out;
+  }
+  33.3323333333% {
+    transform: scale(1);
+    transform-origin: 50% 0%;
+  }
+  33.3333333333% {
+    transform: scale(1);
+    transform-origin: 0% 50%;
+    animation-timing-function: ease-in-out;
+  }
+  37.8888888889% {
+    transform: scale(3);
+    transform-origin: 50% 50%;
+  }
+  41.8803418803% {
+    transform: scale(3);
+    transform-origin: 50% 50%;
+    animation-timing-function: ease-in-out;
+  }
+  44.4434444444% {
+    transform: scale(1);
+    transform-origin: 50% 50%;
+  }
+  44.4444444444% {
+    transform: scale(1);
+    transform-origin: 45% 50%;
+    animation-timing-function: ease-in-out;
+  }
+  49% {
+    transform: scale(3);
+    transform-origin: 100% 50%;
+  }
+  52.9914529915% {
+    transform: scale(3);
+    transform-origin: 100% 50%;
+    animation-timing-function: ease-in-out;
+  }
+  55.5545555556% {
+    transform: scale(1);
+    transform-origin: 100% 50%;
+  }
+  55.5555555556% {
+    transform: scale(1);
+    transform-origin: 45% 100%;
+    animation-timing-function: ease-in-out;
+  }
+  60.1111111111% {
+    transform: scale(3);
+    transform-origin: 100% 100%;
+  }
+  64.1025641026% {
+    transform: scale(3);
+    transform-origin: 100% 100%;
+    animation-timing-function: ease-in-out;
+  }
+  66.6656666667% {
+    transform: scale(1);
+    transform-origin: 100% 100%;
+  }
+  66.6666666667% {
+    transform: scale(1);
+    transform-origin: 20% 50%;
+    animation-timing-function: ease-in-out;
+  }
+  71.2222222222% {
+    transform: scale(3);
+    transform-origin: 0% 50%;
+  }
+  75.2136752137% {
+    transform: scale(3);
+    transform-origin: 0% 50%;
+    animation-timing-function: ease-in-out;
+  }
+  77.7767777778% {
+    transform: scale(1);
+    transform-origin: 0% 50%;
+  }
+  77.7777777778% {
+    transform: scale(1);
+    transform-origin: 0% 100%;
+    animation-timing-function: ease-in-out;
+  }
+  82.3333333333% {
+    transform: scale(3);
+    transform-origin: 50% 100%;
+  }
+  86.3247863248% {
+    transform: scale(3);
+    transform-origin: 50% 100%;
+    animation-timing-function: ease-in-out;
+  }
+  88.8878888889% {
+    transform: scale(1);
+    transform-origin: 50% 100%;
+  }
+  88.8888888889% {
+    transform: scale(1);
+    transform-origin: 20% 100%;
+    animation-timing-function: ease-in-out;
+  }
+  93.4444444444% {
+    transform: scale(3);
+    transform-origin: 0% 100%;
+  }
+  97.4358974359% {
+    transform: scale(3);
+    transform-origin: 0% 100%;
+    animation-timing-function: ease-in-out;
+  }
+  99.999% {
+    transform: scale(1);
+    transform-origin: 0% 100%;
+  }
+}
+#galerie-animata .grid-galerie-16 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  width: 100%;
+  height: 100%;
+  animation: gal_animata_zoom_16 80s linear infinite alternate;
+}
+
+#galerie-animata .grid-galerie-16 figure {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  position: relative;
+}
+
+#galerie-animata .grid-galerie-16 picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#galerie-animata .grid-galerie-16 figcaption {
+  position: absolute;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.7);
+  width: 100%;
+  text-align: center;
+  padding: 1.25px 0;
+  font-size: 0.3rem;
+  box-sizing: border-box;
+}
+
+#galerie-animata .grid-galerie-16 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@keyframes gal_animata_zoom_16 {
+  0% {
+    transform: scale(1);
+    transform-origin: 20% 0%;
+    animation-timing-function: ease-in-out;
+  }
+  2.125% {
+    transform: scale(4);
+    transform-origin: 0% 0%;
+  }
+  4.8076923077% {
+    transform: scale(4);
+    transform-origin: 0% 0%;
+    animation-timing-function: ease-in-out;
+  }
+  6.249% {
+    transform: scale(1);
+    transform-origin: 0% 0%;
+  }
+  6.25% {
+    transform: scale(1);
+    transform-origin: 53.3333333333% 0%;
+    animation-timing-function: ease-in-out;
+  }
+  8.375% {
+    transform: scale(4);
+    transform-origin: 33.3333333333% 0%;
+  }
+  11.0576923077% {
+    transform: scale(4);
+    transform-origin: 33.3333333333% 0%;
+    animation-timing-function: ease-in-out;
+  }
+  12.499% {
+    transform: scale(1);
+    transform-origin: 33.3333333333% 0%;
+  }
+  12.5% {
+    transform: scale(1);
+    transform-origin: 11.6666666667% 0%;
+    animation-timing-function: ease-in-out;
+  }
+  14.625% {
+    transform: scale(4);
+    transform-origin: 66.6666666667% 0%;
+  }
+  17.3076923077% {
+    transform: scale(4);
+    transform-origin: 66.6666666667% 0%;
+    animation-timing-function: ease-in-out;
+  }
+  18.749% {
+    transform: scale(1);
+    transform-origin: 66.6666666667% 0%;
+  }
+  18.75% {
+    transform: scale(1);
+    transform-origin: 45% 0%;
+    animation-timing-function: ease-in-out;
+  }
+  20.875% {
+    transform: scale(4);
+    transform-origin: 100% 0%;
+  }
+  23.5576923077% {
+    transform: scale(4);
+    transform-origin: 100% 0%;
+    animation-timing-function: ease-in-out;
+  }
+  24.999% {
+    transform: scale(1);
+    transform-origin: 100% 0%;
+  }
+  25% {
+    transform: scale(1);
+    transform-origin: 45% 33.3333333333%;
+    animation-timing-function: ease-in-out;
+  }
+  27.125% {
+    transform: scale(4);
+    transform-origin: 100% 33.3333333333%;
+  }
+  29.8076923077% {
+    transform: scale(4);
+    transform-origin: 100% 33.3333333333%;
+    animation-timing-function: ease-in-out;
+  }
+  31.249% {
+    transform: scale(1);
+    transform-origin: 100% 33.3333333333%;
+  }
+  31.25% {
+    transform: scale(1);
+    transform-origin: 11.6666666667% 33.3333333333%;
+    animation-timing-function: ease-in-out;
+  }
+  33.375% {
+    transform: scale(4);
+    transform-origin: 66.6666666667% 33.3333333333%;
+  }
+  36.0576923077% {
+    transform: scale(4);
+    transform-origin: 66.6666666667% 33.3333333333%;
+    animation-timing-function: ease-in-out;
+  }
+  37.499% {
+    transform: scale(1);
+    transform-origin: 66.6666666667% 33.3333333333%;
+  }
+  37.5% {
+    transform: scale(1);
+    transform-origin: 53.3333333333% 33.3333333333%;
+    animation-timing-function: ease-in-out;
+  }
+  39.625% {
+    transform: scale(4);
+    transform-origin: 33.3333333333% 33.3333333333%;
+  }
+  42.3076923077% {
+    transform: scale(4);
+    transform-origin: 33.3333333333% 33.3333333333%;
+    animation-timing-function: ease-in-out;
+  }
+  43.749% {
+    transform: scale(1);
+    transform-origin: 33.3333333333% 33.3333333333%;
+  }
+  43.75% {
+    transform: scale(1);
+    transform-origin: 20% 33.3333333333%;
+    animation-timing-function: ease-in-out;
+  }
+  45.875% {
+    transform: scale(4);
+    transform-origin: 0% 33.3333333333%;
+  }
+  48.5576923077% {
+    transform: scale(4);
+    transform-origin: 0% 33.3333333333%;
+    animation-timing-function: ease-in-out;
+  }
+  49.999% {
+    transform: scale(1);
+    transform-origin: 0% 33.3333333333%;
+  }
+  50% {
+    transform: scale(1);
+    transform-origin: 20% 66.6666666667%;
+    animation-timing-function: ease-in-out;
+  }
+  52.125% {
+    transform: scale(4);
+    transform-origin: 0% 66.6666666667%;
+  }
+  54.8076923077% {
+    transform: scale(4);
+    transform-origin: 0% 66.6666666667%;
+    animation-timing-function: ease-in-out;
+  }
+  56.249% {
+    transform: scale(1);
+    transform-origin: 0% 66.6666666667%;
+  }
+  56.25% {
+    transform: scale(1);
+    transform-origin: 53.3333333333% 66.6666666667%;
+    animation-timing-function: ease-in-out;
+  }
+  58.375% {
+    transform: scale(4);
+    transform-origin: 33.3333333333% 66.6666666667%;
+  }
+  61.0576923077% {
+    transform: scale(4);
+    transform-origin: 33.3333333333% 66.6666666667%;
+    animation-timing-function: ease-in-out;
+  }
+  62.499% {
+    transform: scale(1);
+    transform-origin: 33.3333333333% 66.6666666667%;
+  }
+  62.5% {
+    transform: scale(1);
+    transform-origin: 11.6666666667% 66.6666666667%;
+    animation-timing-function: ease-in-out;
+  }
+  64.625% {
+    transform: scale(4);
+    transform-origin: 66.6666666667% 66.6666666667%;
+  }
+  67.3076923077% {
+    transform: scale(4);
+    transform-origin: 66.6666666667% 66.6666666667%;
+    animation-timing-function: ease-in-out;
+  }
+  68.749% {
+    transform: scale(1);
+    transform-origin: 66.6666666667% 66.6666666667%;
+  }
+  68.75% {
+    transform: scale(1);
+    transform-origin: 45% 66.6666666667%;
+    animation-timing-function: ease-in-out;
+  }
+  70.875% {
+    transform: scale(4);
+    transform-origin: 100% 66.6666666667%;
+  }
+  73.5576923077% {
+    transform: scale(4);
+    transform-origin: 100% 66.6666666667%;
+    animation-timing-function: ease-in-out;
+  }
+  74.999% {
+    transform: scale(1);
+    transform-origin: 100% 66.6666666667%;
+  }
+  75% {
+    transform: scale(1);
+    transform-origin: 45% 100%;
+    animation-timing-function: ease-in-out;
+  }
+  77.125% {
+    transform: scale(4);
+    transform-origin: 100% 100%;
+  }
+  79.8076923077% {
+    transform: scale(4);
+    transform-origin: 100% 100%;
+    animation-timing-function: ease-in-out;
+  }
+  81.249% {
+    transform: scale(1);
+    transform-origin: 100% 100%;
+  }
+  81.25% {
+    transform: scale(1);
+    transform-origin: 11.6666666667% 100%;
+    animation-timing-function: ease-in-out;
+  }
+  83.375% {
+    transform: scale(4);
+    transform-origin: 66.6666666667% 100%;
+  }
+  86.0576923077% {
+    transform: scale(4);
+    transform-origin: 66.6666666667% 100%;
+    animation-timing-function: ease-in-out;
+  }
+  87.499% {
+    transform: scale(1);
+    transform-origin: 66.6666666667% 100%;
+  }
+  87.5% {
+    transform: scale(1);
+    transform-origin: 53.3333333333% 100%;
+    animation-timing-function: ease-in-out;
+  }
+  89.625% {
+    transform: scale(4);
+    transform-origin: 33.3333333333% 100%;
+  }
+  92.3076923077% {
+    transform: scale(4);
+    transform-origin: 33.3333333333% 100%;
+    animation-timing-function: ease-in-out;
+  }
+  93.749% {
+    transform: scale(1);
+    transform-origin: 33.3333333333% 100%;
+  }
+  93.75% {
+    transform: scale(1);
+    transform-origin: 20% 100%;
+    animation-timing-function: ease-in-out;
+  }
+  95.875% {
+    transform: scale(4);
+    transform-origin: 0% 100%;
+  }
+  98.5576923077% {
+    transform: scale(4);
+    transform-origin: 0% 100%;
+    animation-timing-function: ease-in-out;
+  }
+  99.999% {
+    transform: scale(1);
+    transform-origin: 0% 100%;
+  }
+}
+@media screen and (max-width: 700px) {
+  #sectiune-galerie-animata {
+    display: none;
+  }
+}

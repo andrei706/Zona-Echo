@@ -1,0 +1,163 @@
+@use 'sass:math';
+@use 'sass:list';
+
+#sectiune-galerie-animata {
+    padding-left: var(--padding-intern, 1rem);
+    padding-right: var(--padding-intern, 1rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#galerie-animata {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 5rem;
+    /* Border image  */
+    border: 20px solid transparent;
+    border-image: url('../imagini/galerie/border.webp') 30 round;
+
+    /* Oprim animatia cand venim cu cursorul pe galerie */
+    &:hover [class*="grid-galerie"] {
+        animation-play-state: paused;
+    }
+}
+
+$nr-imag-list: 4, 9, 16;
+$coord-4: (
+    (0, 0),
+    (0, 1),
+    (1, 1),
+    (1, 0)
+);
+$coord-9: (
+    (0, 0),
+    (0, 2),
+    (0, 1),
+    (1, 1),
+    (1, 2),
+    (2, 2),
+    (1, 0),
+    (2, 1),
+    (2, 0)
+);
+$coord-16: (
+    (0, 0),
+    (0, 1),
+    (0, 2),
+    (0, 3),
+    (1, 3),
+    (1, 2),
+    (1, 1),
+    (1, 0),
+    (2, 0),
+    (2, 1),
+    (2, 2),
+    (2, 3),
+    (3, 3),
+    (3, 2),
+    (3, 1),
+    (3, 0)
+);
+
+@each $nrimag in $nr-imag-list {
+    $nr-coloane: if($nrimag ==4, 2, if($nrimag ==9, 3, 4));
+    $coord-list: if($nrimag ==4, $coord-4, if($nrimag ==9, $coord-9, $coord-16));
+
+    #galerie-animata .grid-galerie-#{$nrimag} {
+        display: grid;
+        grid-template-columns: repeat($nr-coloane, 1fr);
+        grid-template-rows: repeat($nr-coloane, 1fr);
+        width: 100%;
+        height: 100%;
+        animation: gal_animata_zoom_#{$nrimag} #{ $nrimag * 5 }s linear infinite alternate;
+    }
+
+    #galerie-animata .grid-galerie-#{$nrimag} figure {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        position: relative;
+    }
+
+    #galerie-animata .grid-galerie-#{$nrimag} picture {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    #galerie-animata .grid-galerie-#{$nrimag} figcaption {
+        position: absolute;
+        bottom: 0;
+        background: rgba(255, 255, 255, 0.7);
+        width: 100%;
+        text-align: center;
+        padding: math.div(5px, $nr-coloane) 0;
+        font-size: math.div(1.2rem, $nr-coloane);
+        box-sizing: border-box;
+    }
+
+    #galerie-animata .grid-galerie-#{$nrimag} img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+
+    @keyframes gal_animata_zoom_#{$nrimag} {
+        $pas: math.div(100%, $nrimag);
+
+        @for $i from 0 through ($nrimag - 1) {
+            $curent-coord: list.nth($coord-list, $i + 1);
+            $px: if($nr-coloane > 1, math.div(list.nth($curent-coord, 2), $nr-coloane - 1) * 100%, 0%);
+            $py: if($nr-coloane > 1, math.div(list.nth($curent-coord, 1), $nr-coloane - 1) * 100%, 0%);
+
+            $start: $i * $pas;
+            $stop: (
+                $i + 1) * $pas;
+            $middle: $start + math.div($pas - 2, 2
+            );
+
+        $punct-intermediar: $start + math.div($pas, 6);
+
+        $intermediar-scale: math.div($nr-coloane + 3, 3);
+
+        $px_offset: if($px < 50%, 20%, -55%);
+        $px_drift: math.max(0%, math.min(100%, $px + $px_offset));
+
+        #{$start} {
+            transform: scale(1);
+            transform-origin: $px_drift $py;
+            animation-timing-function: ease-in-out;
+        }
+
+        #{$middle} {
+            transform: scale($nr-coloane);
+            transform-origin: $px $py;
+        }
+
+        $hold: $start + math.div($pas, 1.3);
+
+        #{$hold} {
+            transform: scale($nr-coloane);
+            transform-origin: $px $py;
+            animation-timing-function: ease-in-out;
+        }
+
+        #{$stop - 0.001%} {
+            transform: scale(1);
+            transform-origin: $px $py;
+        }
+    }
+}
+}
+
+@media screen and (max-width: 700px) {
+    #sectiune-galerie-animata {
+        display: none;
+    }
+}

@@ -1,0 +1,128 @@
+{
+	"cale_galerie": "resurse/imagini/galerie",
+	"imagini": [
+		{
+			"cale_imagine": "boxa_port.jpg",
+			"titlu": "Boxă Portabilă",
+			"descriere": "O boxă rezistentă la apă, ideală pentru excursii și activități în aer liber.",
+			"timp": "00:00-11:59",
+			"licenta": "CC0"
+		},
+		{
+			"cale_imagine": "boxa_prem.jpg",
+			"titlu": "Boxă Premium Sound",
+			"descriere": "Sistem audio de înaltă fidelitate pentru o experiență acustică desăvârșită.",
+			"timp": "00:00-23:59",
+			"licenta": "CC0"
+		},
+		{
+			"cale_imagine": "boxa.jpg",
+			"titlu": "Boxă Audio",
+			"descriere": "Design clasic și sunet clar pentru orice tip de încăpere.",
+			"timp": "12:00-23:59",
+			"licenta": "CC0"
+		},
+		{
+			"cale_imagine": "casti_bw.png",
+			"titlu": "Heaphones Black and White Close Up Shot",
+			"descriere": "Fotografie detaliată cu o pereche de căști alb-negru.",
+			"timp": "00:00-23:59",
+			"licenta": "CC BY 2.0",
+			"autor": "gavinwhitner",
+			"link_autor": "https://www.flickr.com/photos/156466858@N02",
+			"link_imagine": "https://www.flickr.com/photos/156466858@N02/48100382853",
+			"html_atribuire": "<p class=\"attribution\">\"<a rel=\"noopener noreferrer\" href=\"https://www.flickr.com/photos/156466858@N02/48100382853\">Heaphones Black and White Close Up Shot</a>\" by <a rel=\"noopener noreferrer\" href=\"https://www.flickr.com/photos/156466858@N02\">gavinwhitner</a> is licensed under <a rel=\"noopener noreferrer\" href=\"https://creativecommons.org/licenses/by/2.0/?ref=openverse\">CC BY 2.0 <img src=\"https://mirrors.creativecommons.org/presskit/icons/cc.svg\" style=\"height: 1em; margin-right: 0.125em; display: inline;\" /><img src=\"https://mirrors.creativecommons.org/presskit/icons/by.svg\" style=\"height: 1em; margin-right: 0.125em; display: inline;\" /></a>.</p>"
+		},
+		{
+			"cale_imagine": "casti_mic.jpg",
+			"titlu": "Căști cu Microfon",
+			"descriere": "Căști confortabile cu microfon integrat, perfecte pentru apeluri și gaming.",
+			"timp": "00:00-11:59",
+			"licenta": "CC0"
+		},
+		{
+			"cale_imagine": "casti_mas.jpg",
+			"titlu": "Căști Studio",
+			"descriere": "Echipament profesional pentru monitorizare audio și producție muzicală.",
+			"timp": "00:00-23:59",
+			"licenta": "CC0"
+		},
+		{
+			"cale_imagine": "c_natura.jpg",
+			"titlu": "Căști Sony Outdoor",
+			"descriere": "Tehnologie Noise Cancelling pentru audiție fără întreruperi în natură.",
+			"timp": "12:00-23:59",
+			"licenta": "CC0"
+		},
+		{
+			"cale_imagine": "casti_sony.jpg",
+			"titlu": "Căști Sony Wireless",
+			"descriere": "Libertate totală de mișcare cu o autonomie a bateriei de până la 30 ore.",
+			"timp": "00:00-23:59",
+			"licenta": "CC0"
+		},
+		{
+			"cale_imagine": "c_vechi.jpg",
+			"titlu": "Căști Retro",
+			"descriere": "Un stil vintage combinat cu tehnologia audio modernă.",
+			"timp": "00:00-11:59",
+			"licenta": "CC0"
+		},
+		{
+			"cale_imagine": "jbl.jpg",
+			"titlu": "Boxă JBL",
+			"descriere": "Putere și bas profund într-un format compact și ușor de transportat.",
+			"timp": "00:00-23:59",
+			"licenta": "CC0"
+		},
+		{
+			"cale_imagine": "b_intuneric.jpg",
+			"titlu": "Boxe în Întuneric",
+			"descriere": "Sistem audio iluminat spectaculos pentru atmosferă de petrecere.",
+			"timp": "12:00-23:59",
+			"licenta": "CC0"
+		},
+		{
+			"cale_imagine": "casti_beats.jpg",
+			"titlu": "Căști Beats",
+			"descriere": "Căști cu un design iconic și bas puternic pentru pasionații de muzică.",
+			"timp": "00:00-11:59",
+			"licenta": "CC0"
+		},
+		{
+			"cale_imagine": "c_fluffy.jpg",
+			"titlu": "Căști Pufoase",
+			"descriere": "Confort maxim și un aspect unic cu aceste căști călduroase.",
+			"timp": "12:00-23:59",
+			"licenta": "CC0"
+		},
+		{
+			"cale_imagine": "c_in_aer.jpg",
+			"titlu": "Căști Plutitoare",
+			"descriere": "Design inovator și sunet perfect într-o formă care sfidează gravitația.",
+			"timp": "00:00-07:59",
+			"licenta": "CC0"
+		},
+		{
+			"cale_imagine": "c_intuneric.jpg",
+			"titlu": "Căști RGB Gaming",
+			"descriere": "Iluminare în întuneric pentru un setup de gaming impresionant.",
+			"timp": "08:00-15:59",
+			"licenta": "CC0"
+		},
+		{
+			"cale_imagine": "jbl_mini.jpg",
+			"titlu": "JBL Speaker Mini",
+			"descriere": "Boxă ultra-compactă cu o performanță uimitoare de luat oriunde.",
+			"timp": "16:00-23:59",
+			"licenta": "CC0"
+		},
+		{
+			"cale_imagine": "oakywood.jpg",
+			"titlu": "Dock Oakywood",
+			"descriere": "Accesorii din lemn natural pentru a-ți completa biroul elegant.",
+			"timp": "00:00-23:59",
+			"licenta": "CC0"
+		}
+	]
+}
