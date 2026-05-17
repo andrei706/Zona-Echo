@@ -55,8 +55,85 @@ address {
     font-style: italic;
     line-height: 1.6;
     display: block;
-    margin-bottom: 20px;
-    color: var(--culoare-text);
+    margin-bottom: 0;
+    color: white;
+}
+
+/* ── Footer ───────────────────────────────────────────────────── */
+footer {
+    background-color: var(--culoare-contur);
+    color: white;
+    padding: 2rem var(--margine-pagina, 2rem);
+    margin-top: 4rem;
+    position: relative;
+}
+
+.footer-contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.footer-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.footer-info p {
+    margin: 0;
+    border: none;
+    color: white;
+    font-size: 0.95rem;
+}
+
+.footer-info a {
+    color: white;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    opacity: 0.9;
+}
+
+.footer-info a:hover {
+    opacity: 1;
+    color: white;
+}
+
+.footer-info a:visited {
+    color: white;
+}
+
+.footer-harta iframe {
+    border-radius: 12px;
+    border: 3px solid rgba(255, 255, 255, 0.3) !important;
+    display: block;
+    width: 100%;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    padding-top: 1rem;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.85rem;
+}
+
+.footer-bottom p {
+    margin: 0;
+    border: none;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+@media screen and (max-width: 700px) {
+    .footer-contact {
+        grid-template-columns: 1fr;
+    }
+
+    footer {
+        padding: 1.5rem 1rem;
+    }
 }
 
 
@@ -104,6 +181,28 @@ body {
     font-size: 1rem;
     line-height: 1.5;
     --margine-pagina: 200px;
+    background-color: var(--culoare-fundal);
+    color: var(--culoare-text);
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+html.dark-preload body {
+    transition: none !important;
+    --culoare-fundal: #010527;
+    --culoare-text: #f0f0f0;
+    background-color: #010527;
+    color: #f0f0f0;
+}
+
+body.dark {
+    --culoare-fundal: #010527;
+    --culoare-contur: #0483d8;
+    --culoare-text: #f0f0f0;
+    --culoare-highlight: #4a72ff;
+    --culoare-detalii: #0675a0;
+    --culoare-vizitat: #9138d9;
+    --c1: rgba(17, 57, 169, 0.8);
+
     background-color: var(--culoare-fundal);
     color: var(--culoare-text);
 }
@@ -429,9 +528,13 @@ th {
     height: 60px;
     opacity: 0.5;
 
-    z-index: 1000;
+    z-index: 5001;
     text-decoration: none;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+body.has-comparare #link-top {
+    bottom: 80px;
 }
 
 #triunghi {

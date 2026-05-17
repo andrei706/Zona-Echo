@@ -1,5 +1,16 @@
-<header>
+<header style="position: relative;">
+
     <h1 class="oswald">Zona Echo<i class="fa-solid fa-music fa-bounce"></i></h1>
+
+    <div class="form-check form-switch"
+        style="position: absolute; top: 1rem; right: 1rem; z-index: 2000; display: flex; align-items: center;">
+        <input class="form-check-input" type="checkbox" role="switch" id="themeSwitch"
+            style="cursor:pointer; margin-right: 0.5rem;">
+        <label class="form-check-label text-white" for="themeSwitch" style="cursor:pointer">
+            <i id="themeIcon" class="fa-solid fa-sun" style="font-size: 1.25rem;"></i>
+        </label>
+    </div>
+
     <nav>
         <!-- <label id="hamburger" for="ch-menu">
                 <img src="resurse/imagini/Hamburger_icon_alb.png" alt="menu">
@@ -33,14 +44,18 @@
                 <ul>
                     <li>
                         <div class="wrapper-buton">
-                            <div class="strat-text"><a href="/index#produse">Toate produsele</a></div>
+                            <div class="strat-text"><a href="/produse">Toate produsele</a></div>
                         </div>
                     </li>
-                    <li>
-                        <div class="wrapper-buton">
-                            <div class="strat-text"><a href="/index#promotii">Promotii</a></div>
-                        </div>
-                    </li>
+                    <% if (locals.optiunimeniu && locals.optiunimeniu.length > 0) { %>
+                        <% locals.optiunimeniu.forEach(function(opt) { %>
+                            <li>
+                                <div class="wrapper-buton">
+                                    <div class="strat-text"><a href="/produse?tip=<%= encodeURIComponent(opt.unnest) %>"><%= opt.unnest %></a></div>
+                                </div>
+                            </li>
+                        <% }); %>
+                    <% } %>
                 </ul>
             </li>
             <li>

@@ -14,17 +14,15 @@
     $h2-font-size: 2.2rem,
 
     $font-family-base: ('Oswald', sans-serif),
+    $border-width: 4px,
 
-    $border-width: 4px);
+    $form-range-thumb-width: 1.5rem,
+    $form-range-thumb-height: 1.5rem,
+    $form-range-thumb-bg: #46A5F2,
+    $form-range-track-bg: #ccc);
 
-body {
-    background-color: var(--culoare-fundal);
-}
-
-a {
-    text-decoration: none;
-}
-
-figure {
-    margin: 0;
-}
+// body {
+//     --bs-primary: var(--culoare-contur);
+//     --bs-secondary: var(--culoare-highlight);
+//     --bs-body-color: var(--culoare-text);
+// }

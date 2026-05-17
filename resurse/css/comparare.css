@@ -1,0 +1,285 @@
+@charset "UTF-8";
+.comparare-pagina {
+  border: 5px solid var(--culoare-contur);
+  box-shadow: 0px 0px 10px var(--culoare-contur);
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+.comparare-pagina .comparare-header {
+  display: grid;
+  grid-template-columns: 22% 1fr 1fr;
+  background: rgba(70, 165, 242, 0.08);
+  border-bottom: 3px solid var(--culoare-contur);
+}
+.comparare-pagina .comparare-header > div {
+  padding: 1.5rem 1rem;
+}
+.comparare-pagina .comparare-header .comparare-col-label {
+  display: flex;
+  align-items: flex-end;
+  font-size: 0.85rem;
+  opacity: 0.5;
+  border-right: 1px solid rgba(70, 165, 242, 0.2);
+}
+.comparare-pagina .comparare-header .comparare-col-prod a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: inherit;
+}
+.comparare-pagina .comparare-header .comparare-col-prod a:hover h2 {
+  color: var(--culoare-contur);
+}
+.comparare-pagina .comparare-header .comparare-col-prod figure {
+  margin: 0;
+}
+.comparare-pagina .comparare-header .comparare-col-prod figure img {
+  width: 100%;
+  max-width: 180px;
+  max-height: 160px;
+  object-fit: contain;
+  border-radius: 10px;
+  border: 2px solid var(--culoare-contur);
+  transition: transform 0.3s ease;
+}
+.comparare-pagina .comparare-header .comparare-col-prod figure img:hover {
+  transform: scale(1.05);
+}
+.comparare-pagina .comparare-header .comparare-col-prod h2 {
+  font-size: 1.1rem;
+  text-align: center;
+  color: var(--culoare-highlight);
+  transition: color 0.2s ease;
+  margin: 0;
+}
+.comparare-pagina .comparare-header .comparare-col-prod:first-of-type {
+  border-right: 1px solid rgba(70, 165, 242, 0.2);
+}
+.comparare-pagina .specificatii {
+  border: none;
+  border-radius: 0;
+}
+.comparare-pagina .specificatii table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.comparare-pagina .specificatii table tr {
+  display: grid;
+  grid-template-columns: 22% 1fr 1fr;
+  border-bottom: 1px solid rgba(70, 165, 242, 0.15);
+}
+.comparare-pagina .specificatii table tr:last-child {
+  border-bottom: none;
+}
+.comparare-pagina .specificatii table tr:hover td, .comparare-pagina .specificatii table tr:hover th {
+  background: rgba(70, 165, 242, 0.06);
+}
+.comparare-pagina .specificatii table th {
+  padding: 0.75rem 1rem !important;
+  font-weight: normal !important;
+  text-align: left !important;
+  border: none !important;
+  border-right: 1px solid rgba(70, 165, 242, 0.2) !important;
+  color: var(--culoare-text);
+  opacity: 0.65;
+  font-size: 0.88rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: transparent;
+}
+.comparare-pagina .specificatii table td {
+  padding: 0.75rem 1rem;
+  border: none;
+  border-right: 1px solid rgba(70, 165, 242, 0.15);
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+.comparare-pagina .specificatii table td:last-child {
+  border-right: none;
+}
+.comparare-pagina .specificatii table td.val-mai-bun {
+  color: #2dbe6c;
+  position: relative;
+}
+.comparare-pagina .specificatii table td.val-mai-bun::after {
+  content: "★";
+  margin-left: 0.4rem;
+  font-size: 0.75rem;
+}
+.comparare-pagina .specificatii table td.val-mai-rau {
+  color: #dc3545;
+  opacity: 0.7;
+}
+
+@media screen and (max-width: 700px) {
+  .comparare-pagina {
+    border-radius: 12px;
+    border-width: 3px;
+  }
+  .comparare-pagina .comparare-header {
+    grid-template-columns: 1fr 1fr;
+  }
+  .comparare-pagina .comparare-header .comparare-col-label {
+    display: none;
+  }
+  .comparare-pagina .comparare-header > div {
+    padding: 0.75rem 0.5rem;
+  }
+  .comparare-pagina .comparare-header .comparare-col-prod figure img {
+    max-width: 80px;
+    max-height: 70px;
+  }
+  .comparare-pagina .comparare-header .comparare-col-prod h2 {
+    font-size: 0.8rem;
+  }
+  .comparare-pagina .comparare-header .comparare-col-prod:first-of-type {
+    border-right: 1px solid rgba(70, 165, 242, 0.2);
+  }
+  .comparare-pagina .specificatii table tr {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "spec spec" "val1 val2";
+    padding: 0.4rem 0;
+  }
+  .comparare-pagina .specificatii table tr:hover td, .comparare-pagina .specificatii table tr:hover th {
+    background: transparent;
+  }
+  .comparare-pagina .specificatii table th {
+    grid-area: spec;
+    padding: 0.4rem 0.75rem !important;
+    border-right: none !important;
+    border-bottom: 1px dashed rgba(70, 165, 242, 0.2) !important;
+    font-size: 0.8rem !important;
+    opacity: 0.6;
+  }
+  .comparare-pagina .specificatii table td {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.85rem;
+  }
+  .comparare-pagina .specificatii table td:nth-child(2) {
+    grid-area: val1;
+    border-right: 1px solid rgba(70, 165, 242, 0.15);
+  }
+  .comparare-pagina .specificatii table td:nth-child(3) {
+    grid-area: val2;
+    border-right: none;
+  }
+}
+#container-comparare {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 5000;
+  background: var(--culoare-fundal);
+  border-top: 3px solid var(--culoare-contur);
+  padding: 0.75rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  box-shadow: 0 -5px 25px rgba(70, 165, 242, 0.25);
+  backdrop-filter: blur(10px);
+}
+#container-comparare.comparare-animate {
+  animation: comparare-slide-up 0.3s ease;
+}
+#container-comparare .comparare-label {
+  color: var(--culoare-text);
+  font-size: 0.85rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+#container-comparare .comparare-produse {
+  display: flex;
+  gap: 1rem;
+  flex: 1;
+}
+#container-comparare .comparare-entry {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(70, 165, 242, 0.1);
+  border: 1px solid var(--culoare-contur);
+  border-radius: 8px;
+  padding: 0.4rem 0.75rem;
+}
+#container-comparare .comparare-entry .comparare-name {
+  color: var(--culoare-text);
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+#container-comparare .comparare-entry .comparare-remove {
+  background: none;
+  border: none;
+  color: #dc3545;
+  cursor: pointer;
+  padding: 0 0.2rem;
+  font-size: 0.9rem;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+#container-comparare .comparare-entry .comparare-remove:hover {
+  color: #ff6b6b;
+}
+#container-comparare .comparare-afiseaza {
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+@keyframes comparare-slide-up {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+body.has-comparare {
+  padding-bottom: 70px;
+}
+
+@media screen and (max-width: 700px) {
+  #container-comparare {
+    padding: 0.5rem 0.75rem;
+    gap: 0.5rem;
+    flex-wrap: nowrap;
+  }
+  #container-comparare .comparare-label {
+    display: none;
+  }
+  #container-comparare .comparare-produse {
+    gap: 0.4rem;
+    min-width: 0;
+  }
+  #container-comparare .comparare-entry {
+    padding: 0.3rem 0.5rem;
+    min-width: 0;
+  }
+  #container-comparare .comparare-entry .comparare-name {
+    font-size: 0.78rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 90px;
+  }
+  #container-comparare .comparare-afiseaza {
+    font-size: 0.82rem;
+    padding: 0.3rem 0.6rem;
+    white-space: nowrap;
+  }
+  body.has-comparare {
+    padding-bottom: 60px;
+  }
+}
+.btn-comparare:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+}

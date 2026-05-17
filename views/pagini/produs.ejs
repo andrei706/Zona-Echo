@@ -3,39 +3,126 @@
 
 <head>
     <meta name="description"
-        content="Cofetaria Dulcelind ofera prajituri, torturi, produse de patiserie cu optiunea de achizitie online si livrare prin curier.">
+        content="<%- locals.prod.nume %> — detalii produs la Zona Echo: pret, specificatii tehnice si caracteristici.">
     <meta name="keywords"
-        content="cofetarie, Dulcelind, prajituri, torturi, dulce, pateuri, produse,<%- locals.prod.nume %>">
+        content="Zona Echo, <%- locals.prod.nume %>, <%- locals.prod.tip_produs %>, <%- locals.prod.destinatie_utilizare %>">
 
-    <title>Cofetăria Dulcelind - <%- locals.prod.nume %></title>
+    <title>Zona Echo — <%- locals.prod.nume %></title>
     <%- include("../fragmente/head") %>
         <link href="/resurse/css/produs.css" type="text/css" rel="stylesheet" />
 </head>
 
-<%- include("../fragmente/header") %>
-    <main>
-        <section>
-            <h2>Pagină produs</h2>
-            <article id="art-produs">
-                <h3><span class="nume"><%- locals.prod.nume %></span></h3>
-                <p>Pret: <span class="pret"><%- locals.prod.pret %> </span></p>
-                <p>Descriere: <span class="descriere"><%- locals.prod.descriere %> </span></p>
-                <p>Ingrediente: <span class="ingrediente"><%- locals.prod.ingrediente %> </span></p>
-                <p>Calorii: <span class="calorii"><%- locals.prod.calorii %> </span></p>
-                <p>Gramaj: <span class="gramaj"><%- locals.prod.gramaj %> </span></p>
-                <p>Categorie: <span class="categorie"><%- locals.prod.categorie %> </span></p>
-                <p>Pentru diabetici: <span class="pt_diabetici"><%- locals.prod.pt_diabetici %> </span></p>
-                <p>Data adăugare: <span class="categorie"><%- locals.prod.data_adaugare %> </span></p>
-                <figure class="imag-produs">
-                    <img src="/resurse/imagini/produse/<%- locals.prod.imagine %>"
-                        alt="[imagine <%- locals.prod.nume %>]" />
-                </figure>
-            </article>
+<body>
+    <%- include("../fragmente/header") %>
+        <main>
+            <section>
+                <p class="titlu-pagina-produs">
+                    <a href="/produse"><i class="fa-solid fa-arrow-left"></i> Înapoi la produse</a>
+                    &nbsp;/&nbsp; <%- locals.prod.tip_produs %>
+                </p>
 
-        </section>
-    </main>
+                <div class="container-produs">
+                    <div class="produs-imagine">
+                        <figure>
+                            <img src="/resurse/imagini/produse/<%- locals.prod.imagine %>"
+                                alt="<%- locals.prod.nume %>" />
+                            <figcaption><%- locals.prod.nume %></figcaption>
+                        </figure>
 
-    <%- include("../fragmente/footer") %>
-        </body>
+                        <% if (locals.prod.expediat_in_magazin) { %>
+                            <span class="badge-disponibil in-stoc">
+                                <i class="fa-solid fa-circle-check"></i> Disponibil în magazin
+                            </span>
+                            <% } else { %>
+                                <span class="badge-disponibil lipsa-stoc">
+                                    <i class="fa-solid fa-circle-xmark"></i> Indisponibil momentan
+                                </span>
+                                <% } %>
+                    </div>
+
+
+                    <div class="produs-detalii">
+                        <h2 class="produs-titlu"><%- locals.prod.nume %></h2>
+
+                        <p class="produs-pret"><%- locals.prod.pret %> RON</p>
+
+                        <p class="produs-descriere"><%- locals.prod.descriere %></p>
+
+
+                        <div class="specificatii">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <th><i class="fa-solid fa-tag"></i> Tip produs</th>
+                                        <td><%- locals.prod.tip_produs %></td>
+                                    </tr>
+                                    <tr>
+                                        <th><i class="fa-solid fa-bullseye"></i> Destinație</th>
+                                        <td><%- locals.prod.destinatie_utilizare %></td>
+                                    </tr>
+                                    <tr>
+                                        <th><i class="fa-solid fa-weight-hanging"></i> Greutate</th>
+                                        <td><%- locals.prod.greutate %> g</td>
+                                    </tr>
+                                    <tr>
+                                        <th><i class="fa-solid fa-droplet"></i> Rezistență apă</th>
+                                        <td>
+                                            <% if (locals.prod.rezistenta_apa) { %>
+                                                <%- locals.prod.rezistenta_apa %>
+                                                    <% } else { %>
+                                                        <span style="opacity:0.5">—</span>
+                                                        <% } %>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><i class="fa-regular fa-calendar"></i> Data adăugare</th>
+                                        <td>
+                                            <% const luni=["Ianuarie", "Februarie" , "Martie" , "Aprilie" , "Mai"
+                                                , "Iunie" , "Iulie" , "August" , "Septembrie" , "Octombrie"
+                                                , "Noiembrie" , "Decembrie" ]; const zile=["Duminica", "Luni" , "Marti"
+                                                , "Miercuri" , "Joi" , "Vineri" , "Sambata" ]; const d=new
+                                                Date(locals.prod.data_adaugare); const dataFormatata=d.getDate() + "-" +
+                                                luni[d.getMonth()] + "-" + d.getFullYear() + " [" + zile[d.getDay()]
+                                                + "]" ; %>
+                                                <time datetime="<%- d.toISOString().split('T')[0] %>">
+                                                    <%- dataFormatata %>
+                                                </time>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <% if (locals.prod.caracteristici && locals.prod.caracteristici.length> 0) { %>
+                            <div>
+                                <p style="margin:0 0 0.5rem; opacity:0.7; font-size:0.9rem;">Caracteristici:</p>
+                                <ul class="caracteristici-lista">
+                                    <% for (let c of locals.prod.caracteristici) { %>
+                                        <li><i class="fa-solid fa-check"
+                                                style="font-size:0.75rem; margin-right:4px;"></i><%- c %></li>
+                                        <% } %>
+                                </ul>
+                            </div>
+                            <% } %>
+
+                                <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
+                                    <a href="/produse" class="btn btn-secondary btn-inapoi">
+                                        <i class="fa-solid fa-arrow-left"></i> Înapoi la produse
+                                    </a>
+                                    <button class="btn btn-outline-primary btn-comparare"
+                                        data-prod-id="<%- locals.prod.id %>"
+                                        data-prod='<%- JSON.stringify(locals.prod) %>'>
+                                        <i class="fa-solid fa-scale-balanced"></i> Compară
+                                    </button>
+                                </div>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+
+        <%- include("../fragmente/comparare_ui") %>
+            <%- include("../fragmente/footer") %>
+</body>
 
 </html>

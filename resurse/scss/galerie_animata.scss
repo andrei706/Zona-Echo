@@ -92,18 +92,17 @@ $coord-16: (
     #galerie-animata .grid-galerie-#{$nrimag} figcaption {
         position: absolute;
         bottom: 0;
-        background: rgba(255, 255, 255, 0.7);
+        background: var(--culoare-fundal);
+        color: var(--culoare-text);
         width: 100%;
         text-align: center;
         padding: math.div(5px, $nr-coloane) 0;
         font-size: math.div(1.2rem, $nr-coloane);
-        box-sizing: border-box;
     }
 
     #galerie-animata .grid-galerie-#{$nrimag} img {
         width: 100%;
         height: 100%;
-        object-fit: cover;
         display: block;
     }
 
@@ -121,10 +120,6 @@ $coord-16: (
                 $i + 1) * $pas;
             $middle: $start + math.div($pas - 2, 2
             );
-
-        $punct-intermediar: $start + math.div($pas, 6);
-
-        $intermediar-scale: math.div($nr-coloane + 3, 3);
 
         $px_offset: if($px < 50%, 20%, -55%);
         $px_drift: math.max(0%, math.min(100%, $px + $px_offset));

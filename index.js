@@ -7,6 +7,10 @@ const sharp = require("sharp");
 const ejs = require("ejs");
 const pg = require("pg");
 
+// const AccesBD = require("./module_proprii/accesbd.js");
+// const { Utilizator } = require("./module_proprii/utilizator.js")
+// const Drepturi = require("./module_proprii/drepturi.js");
+
 app = express();
 app.set("view engine", "ejs")
 
@@ -16,6 +20,7 @@ obGlobal = {
     folderScss: path.join(__dirname, "resurse/scss"),
     folderCss: path.join(__dirname, "resurse/css"),
     folderBackup: path.join(__dirname, "backup"),
+    optiuniMeniu: []
 }
 
 console.log("Folder index.js", __dirname);
@@ -35,31 +40,62 @@ client = new pg.Client({
 
 client.connect()
 
-app.get("/produse", function (req, res) {
+client.query("select * from unnest(enum_range(null::categorie_audio))", function (err, rez) {
+    if (err) {
+        console.log("Eroare la incarcarea categoriilor audio:", err)
+    }
+    else {
+        obGlobal.optiuniMeniu = rez.rows
+        app.locals.optiunimeniu = rez.rows
+        console.log("Categorii audio incarcate:", rez.rows)
+    }
+})
 
-    clauzaWhere = ""
-    if (req.query.tip)
-        clauzaWhere = `where tip_produs ='${req.query.tip}'`
-    client.query(`select * from prajituri ${clauzaWhere}`, function (err, rez) {
+client.query("select * from unnest(enum_range(null::destinatie_utilizare))", function (err, rez) {
+    if (err) {
+        console.log("Eroare la incarcarea destinatiilor:", err)
+    } else {
+        app.locals.destinatii = rez.rows
+        console.log("Destinatii incarcate:", rez.rows)
+    }
+})
+
+app.get("/produse", function (req, res) {
+    const tipSelectat = req.query.tip || null
+    client.query("select * from produse", function (err, rez) {
         if (err) {
-            console.log("Eroare", err);
+            console.log("Eroare", err)
             afisareEroare(res, 2)
         }
         else {
-            res.render("pagini/produse", {
-                produse: rez.rows,
-                optiuni: []
-            })
-            console.log(res);
+            const caracteristiciValori = [...new Set(rez.rows.flatMap(p => p.caracteristici || []))].sort()
+            client.query(
+                "SELECT MIN(pret) AS pret_min, MAX(pret) AS pret_max FROM produse",
+                function (err, rezStats) {
+                    if (err) {
+                        afisareEroare(res, 2)
+                    } else {
+                        const stats = rezStats.rows[0];
+                        res.render("pagini/produse", {
+                            produse: rez.rows,
+                            optiuni: app.locals.optiunimeniu || [],
+                            pretMin: Math.floor(stats.pret_min),
+                            pretMax: Math.ceil(stats.pret_max),
+                            tipSelectat: tipSelectat,
+                            caracteristiciValori: caracteristiciValori
+                        })
+                    }
+                }
+            )
         }
     })
 })
 
-app.get("/produs/:id", function (req, res) {
 
-    client.query(`select * from prajituri where id=${req.params.id}`, function (err, rez) {
+app.get("/produs/:id", function (req, res) {
+    client.query(`select * from produse where id=${req.params.id}`, function (err, rez) {
         if (err) {
-            console.log("Eroare", err);
+            console.log("Eroare", err)
             afisareEroare(res, 2)
         }
         else {
@@ -67,15 +103,38 @@ app.get("/produs/:id", function (req, res) {
                 afisareEroare(res, 404, "Produs inexistent")
             }
             else {
+
                 res.render("pagini/produs", {
                     prod: rez.rows[0],
-                    optiuni: []
                 })
             }
+
         }
     })
 })
 
+app.get("/comparare", function (req, res) {
+    const id1 = parseInt(req.query.id1);
+    const id2 = parseInt(req.query.id2);
+
+    if (!id1 || !id2 || id1 === id2) {
+        afisareEroare(res, 400, "Parametri invalizi", "Specificati doua produse diferite pentru comparare.");
+        return;
+    }
+
+    client.query(`SELECT * FROM produse WHERE id = $1 OR id = $2`, [id1, id2], function (err, rez) {
+        if (err) {
+            console.log("Eroare comparare:", err);
+            afisareEroare(res, 2);
+        } else if (rez.rowCount < 2) {
+            afisareEroare(res, 404, "Produs negasit", "Unul sau ambele produse nu exista.");
+        } else {
+            const prod1 = rez.rows.find(r => r.id === id1);
+            const prod2 = rez.rows.find(r => r.id === id2);
+            res.render("pagini/comparare", { prod1, prod2 });
+        }
+    });
+})
 // End of SQL
 
 function initErori() {
@@ -121,6 +180,7 @@ for (let folder of vect_foldere) {
 // });
 
 app.get(["/", "/index", "/home"], function (req, res) {
+    //Galeria animata
     let vals = [4, 9, 16];
     let rIdx = Math.floor(Math.random() * vals.length);
     let nrImagRand = vals[rIdx];
@@ -143,9 +203,27 @@ app.get(["/", "/index", "/home"], function (req, res) {
         }
     }
 
+    //Galerie statica
+
+    let vImagini = obGlobal.obImagini.imagini;
+    let data = new Date();
+    let oraMinuteSrv = data.getHours() * 60 + data.getMinutes();
+
+    let imaginiFiltrateStatica = vImagini.filter(imag => {
+        if (!imag.timp) return false;
+        let p = imag.timp.split("-");
+        let start = p[0].split(":");
+        let end = p[1].split(":");
+        let tStart = parseInt(start[0]) * 60 + parseInt(start[1]);
+        let tEnd = parseInt(end[0]) * 60 + parseInt(end[1]);
+        return oraMinuteSrv >= tStart && oraMinuteSrv <= tEnd;
+    });
+
+    imaginiFiltrateStatica = imaginiFiltrateStatica.slice(0, 10);
+
     res.render("pagini/index", {
         ip: req.ip,
-        imagini: obGlobal.obImagini.imagini,
+        imagini: imaginiFiltrateStatica,
         imagini_animata: imaginiAlese,
         nrImagRand: nrImagRand
     });
@@ -236,23 +314,10 @@ function initImagini() {
     if (!fs.existsSync(caleAbsMediu)) fs.mkdirSync(caleAbsMediu);
     if (!fs.existsSync(caleAbsMic)) fs.mkdirSync(caleAbsMic);
 
-    let data = new Date();
-    let oraMinuteSrv = data.getHours() * 60 + data.getMinutes();
 
-    let imaginiFiltrate = vImagini.filter(imag => {
-        if (!imag.timp) return false;
-        let p = imag.timp.split("-");
-        let start = p[0].split(":");
-        let end = p[1].split(":");
-        let tStart = parseInt(start[0]) * 60 + parseInt(start[1]);
-        let tEnd = parseInt(end[0]) * 60 + parseInt(end[1]);
-        return oraMinuteSrv >= tStart && oraMinuteSrv <= tEnd;
-    });
-
-    // Trunchere la maxim 10
-    imaginiFiltrate = imaginiFiltrate.slice(0, 10);
-
-    for (let imag of imaginiFiltrate) {
+    // Setam caile pentru TOATE imaginile (setup static, o singura data)
+    // Filtrarea se face dinamic in ruta, la fiecare request
+    for (let imag of vImagini) {
         let numeSiExt = imag.cale_imagine.split(".");
         let numeFis = numeSiExt[0];
         let caleFisAbs = path.join(caleAbs, imag.cale_imagine);
@@ -264,20 +329,16 @@ function initImagini() {
         }
         imag.fisier_mediu = path.join("/", caleGalerie, "mediu", numeFis + ".webp");
 
-        // Setup Mic
-        let caleFisMicAbs = path.join(caleAbsMic, numeFis + ".webp");
-        if (!fs.existsSync(caleFisMicAbs)) {
-            sharp(caleFisAbs).resize({ width: 250, height: 250, fit: "cover" }).toFile(caleFisMicAbs);
-        }
-        imag.fisier_mic = path.join("/", caleGalerie, "mic", numeFis + ".webp");
+        // // Setup Mic
+        // let caleFisMicAbs = path.join(caleAbsMic, numeFis + ".webp");
+        // if (!fs.existsSync(caleFisMicAbs)) {
+        //     sharp(caleFisAbs).resize({ width: 250, height: 250, fit: "cover" }).toFile(caleFisMicAbs);
+        // }
+        // imag.fisier_mic = path.join("/", caleGalerie, "mic", numeFis + ".webp");
 
         // Original
         imag.fisier = path.join("/", caleGalerie, imag.cale_imagine);
     }
-
-    // Setam inapoi in obiectul original pentru rute doar cele corecte
-    obGlobal.obImagini.imagini = imaginiFiltrate;
-    console.log("Imagini filtrate prelucrate în initImagini (max 10).");
 }
 initImagini();
 

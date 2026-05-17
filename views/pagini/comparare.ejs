@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta name="description"
+        content="Comparare produse <%- locals.prod1.nume %> vs <%- locals.prod2.nume %> — Zona Echo">
+    <meta name="keywords" content="comparare, <%- locals.prod1.nume %>, <%- locals.prod2.nume %>, Zona Echo">
+    <title>Zona Echo — Comparare: <%- locals.prod1.nume %> vs <%- locals.prod2.nume %></title>
+    <%- include("../fragmente/head") %>
+        <link href="/resurse/css/comparare.css" type="text/css" rel="stylesheet" />
+        <link href="/resurse/css/produs.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+    <%- include("../fragmente/header") %>
+        <main>
+            <section>
+                <p class="titlu-pagina-produs">
+                    <a href="/produse"><i class="fa-solid fa-arrow-left"></i> Înapoi la produse</a>
+                    &nbsp;/&nbsp; Comparare produse
+                </p>
+
+                <div class="comparare-pagina">
+                    <div class="comparare-header">
+                        <div class="comparare-col-label">Specificație</div>
+                        <div class="comparare-col-prod">
+                            <a href="/produs/<%- locals.prod1.id %>">
+                                <figure>
+                                    <img src="/resurse/imagini/produse/<%- locals.prod1.imagine %>"
+                                        alt="<%- locals.prod1.nume %>" />
+                                </figure>
+                                <h2><%- locals.prod1.nume %></h2>
+                            </a>
+                        </div>
+                        <div class="comparare-col-prod">
+                            <a href="/produs/<%- locals.prod2.id %>">
+                                <figure>
+                                    <img src="/resurse/imagini/produse/<%- locals.prod2.imagine %>"
+                                        alt="<%- locals.prod2.nume %>" />
+                                </figure>
+                                <h2><%- locals.prod2.nume %></h2>
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <div class="specificatii">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th><i class="fa-solid fa-tag"></i> Preț</th>
+                                    <td class="<%= locals.prod1.pret < locals.prod2.pret ? 'val-mai-bun' : '' %>">
+                                        <%- locals.prod1.pret %> RON
+                                    </td>
+                                    <td class="<%= locals.prod2.pret < locals.prod1.pret ? 'val-mai-bun' : '' %>">
+                                        <%- locals.prod2.pret %> RON
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><i class="fa-solid fa-tag"></i> Tip produs</th>
+                                    <td><%- locals.prod1.tip_produs %></td>
+                                    <td><%- locals.prod2.tip_produs %></td>
+                                </tr>
+                                <tr>
+                                    <th><i class="fa-solid fa-bullseye"></i> Destinație</th>
+                                    <td><%- locals.prod1.destinatie_utilizare %></td>
+                                    <td><%- locals.prod2.destinatie_utilizare %></td>
+                                </tr>
+                                <tr>
+                                    <th><i class="fa-solid fa-weight-hanging"></i> Greutate</th>
+                                    <td
+                                        class="<%= locals.prod1.greutate < locals.prod2.greutate ? 'val-mai-bun' : '' %>">
+                                        <%- locals.prod1.greutate %> g
+                                    </td>
+                                    <td
+                                        class="<%= locals.prod2.greutate < locals.prod1.greutate ? 'val-mai-bun' : '' %>">
+                                        <%- locals.prod2.greutate %> g
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><i class="fa-solid fa-droplet"></i> Rezistență apă</th>
+                                    <td><%- locals.prod1.rezistenta_apa || '—' %></td>
+                                    <td><%- locals.prod2.rezistenta_apa || '—' %></td>
+                                </tr>
+                                <tr>
+                                    <th><i class="fa-solid fa-circle-check"></i> Disponibil</th>
+                                    <td class="<%= locals.prod1.expediat_in_magazin ? 'val-mai-bun' : 'val-mai-rau' %>">
+                                        <%- locals.prod1.expediat_in_magazin ? '✓ Da' : '✗ Nu' %>
+                                    </td>
+                                    <td class="<%= locals.prod2.expediat_in_magazin ? 'val-mai-bun' : 'val-mai-rau' %>">
+                                        <%- locals.prod2.expediat_in_magazin ? '✓ Da' : '✗ Nu' %>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><i class="fa-solid fa-list-check"></i> Caracteristici</th>
+                                    <td>
+                                        <% if (locals.prod1.caracteristici && locals.prod1.caracteristici.length> 0) {
+                                            %>
+                                            <ul class="caracteristici-lista">
+                                                <% for (let c of locals.prod1.caracteristici) { %>
+                                                    <li><i class="fa-solid fa-check"
+                                                            style="font-size:.7rem;margin-right:4px"></i><%- c %></li>
+                                                    <% } %>
+                                            </ul>
+                                            <% } else { %><span style="opacity:.4">—</span>
+                                                <% } %>
+                                    </td>
+                                    <td>
+                                        <% if (locals.prod2.caracteristici && locals.prod2.caracteristici.length> 0) {
+                                            %>
+                                            <ul class="caracteristici-lista">
+                                                <% for (let c of locals.prod2.caracteristici) { %>
+                                                    <li><i class="fa-solid fa-check"
+                                                            style="font-size:.7rem;margin-right:4px"></i><%- c %></li>
+                                                    <% } %>
+                                            </ul>
+                                            <% } else { %><span style="opacity:.4">—</span>
+                                                <% } %>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><i class="fa-regular fa-calendar"></i> Data adăugare</th>
+                                    <td>
+                                        <time
+                                            datetime="<%- new Date(locals.prod1.data_adaugare).toISOString().split('T')[0] %>">
+                                            <%- new Date(locals.prod1.data_adaugare).toLocaleDateString('ro-RO', {
+                                                year:'numeric', month:'long', day:'numeric' }) %>
+                                        </time>
+                                    </td>
+                                    <td>
+                                        <time
+                                            datetime="<%- new Date(locals.prod2.data_adaugare).toISOString().split('T')[0] %>">
+                                            <%- new Date(locals.prod2.data_adaugare).toLocaleDateString('ro-RO', {
+                                                year:'numeric', month:'long', day:'numeric' }) %>
+                                        </time>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+
+        <%- include("../fragmente/footer") %>
+</body>
+
+</html>

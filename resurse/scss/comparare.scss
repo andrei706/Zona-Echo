@@ -1,0 +1,348 @@
+.comparare-pagina {
+    border: 5px solid var(--culoare-contur);
+    box-shadow: 0px 0px 10px var(--culoare-contur);
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+
+    .comparare-header {
+        display: grid;
+        grid-template-columns: 22% 1fr 1fr;
+        background: rgba(70, 165, 242, 0.08);
+        border-bottom: 3px solid var(--culoare-contur);
+
+        >div {
+            padding: 1.5rem 1rem;
+        }
+
+        .comparare-col-label {
+            display: flex;
+            align-items: flex-end;
+            font-size: 0.85rem;
+            opacity: 0.5;
+            border-right: 1px solid rgba(70, 165, 242, 0.2);
+        }
+
+        .comparare-col-prod {
+            a {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 0.75rem;
+                text-decoration: none;
+                color: inherit;
+
+                &:hover h2 {
+                    color: var(--culoare-contur);
+                }
+            }
+
+            figure {
+                margin: 0;
+
+                img {
+                    width: 100%;
+                    max-width: 180px;
+                    max-height: 160px;
+                    object-fit: contain;
+                    border-radius: 10px;
+                    border: 2px solid var(--culoare-contur);
+                    transition: transform 0.3s ease;
+
+                    &:hover {
+                        transform: scale(1.05);
+                    }
+                }
+            }
+
+            h2 {
+                font-size: 1.1rem;
+                text-align: center;
+                color: var(--culoare-highlight);
+                transition: color 0.2s ease;
+                margin: 0;
+            }
+
+            &:first-of-type {
+                border-right: 1px solid rgba(70, 165, 242, 0.2);
+            }
+        }
+    }
+
+    .specificatii {
+        border: none;
+        border-radius: 0;
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+
+            tr {
+                display: grid;
+                grid-template-columns: 22% 1fr 1fr;
+                border-bottom: 1px solid rgba(70, 165, 242, 0.15);
+
+                &:last-child {
+                    border-bottom: none;
+                }
+
+                &:hover td,
+                &:hover th {
+                    background: rgba(70, 165, 242, 0.06);
+                }
+            }
+
+            th {
+                padding: 0.75rem 1rem !important;
+                font-weight: normal !important;
+                text-align: left !important;
+                border: none !important;
+                border-right: 1px solid rgba(70, 165, 242, 0.2) !important;
+                color: var(--culoare-text);
+                opacity: 0.65;
+                font-size: 0.88rem;
+                display: flex;
+                align-items: center;
+                gap: 0.4rem;
+                background-color: transparent;
+            }
+
+            td {
+                padding: 0.75rem 1rem;
+                border: none;
+                border-right: 1px solid rgba(70, 165, 242, 0.15);
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+
+                &:last-child {
+                    border-right: none;
+                }
+
+                &.val-mai-bun {
+                    color: #2dbe6c;
+                    position: relative;
+
+                    &::after {
+                        content: '★';
+                        margin-left: 0.4rem;
+                        font-size: 0.75rem;
+                    }
+                }
+
+                &.val-mai-rau {
+                    color: #dc3545;
+                    opacity: 0.7;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .comparare-pagina {
+        border-radius: 12px;
+        border-width: 3px;
+
+        .comparare-header {
+            grid-template-columns: 1fr 1fr;
+
+            .comparare-col-label {
+                display: none;
+            }
+
+            >div {
+                padding: 0.75rem 0.5rem;
+            }
+
+            .comparare-col-prod {
+                figure img {
+                    max-width: 80px;
+                    max-height: 70px;
+                }
+
+                h2 {
+                    font-size: 0.8rem;
+                }
+
+                &:first-of-type {
+                    border-right: 1px solid rgba(70, 165, 242, 0.2);
+                }
+            }
+        }
+
+
+        .specificatii table {
+            tr {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-areas:
+                    "spec spec"
+                    "val1 val2";
+                padding: 0.4rem 0;
+
+                &:hover td,
+                &:hover th {
+                    background: transparent;
+                }
+            }
+
+            th {
+                grid-area: spec;
+                padding: 0.4rem 0.75rem !important;
+                border-right: none !important;
+                border-bottom: 1px dashed rgba(70, 165, 242, 0.2) !important;
+                font-size: 0.8rem !important;
+                opacity: 0.6;
+            }
+
+            td {
+                padding: 0.4rem 0.75rem;
+                font-size: 0.85rem;
+
+                &:nth-child(2) {
+                    grid-area: val1;
+                    border-right: 1px solid rgba(70, 165, 242, 0.15);
+                }
+
+                &:nth-child(3) {
+                    grid-area: val2;
+                    border-right: none;
+                }
+            }
+        }
+    }
+}
+
+#container-comparare {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 5000;
+    background: var(--culoare-fundal);
+    border-top: 3px solid var(--culoare-contur);
+    padding: 0.75rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    box-shadow: 0 -5px 25px rgba(70, 165, 242, 0.25);
+    backdrop-filter: blur(10px);
+
+    &.comparare-animate {
+        animation: comparare-slide-up 0.3s ease;
+    }
+
+    .comparare-label {
+        color: var(--culoare-text);
+        font-size: 0.85rem;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    .comparare-produse {
+        display: flex;
+        gap: 1rem;
+        flex: 1;
+    }
+
+    .comparare-entry {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: rgba(70, 165, 242, 0.1);
+        border: 1px solid var(--culoare-contur);
+        border-radius: 8px;
+        padding: 0.4rem 0.75rem;
+
+        .comparare-name {
+            color: var(--culoare-text);
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .comparare-remove {
+            background: none;
+            border: none;
+            color: #dc3545;
+            cursor: pointer;
+            padding: 0 0.2rem;
+            font-size: 0.9rem;
+            line-height: 1;
+            transition: color 0.2s ease;
+
+            &:hover {
+                color: #ff6b6b;
+            }
+        }
+    }
+
+    .comparare-afiseaza {
+        margin-left: auto;
+        flex-shrink: 0;
+    }
+}
+
+@keyframes comparare-slide-up {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+body.has-comparare {
+    padding-bottom: 70px;
+}
+
+@media screen and (max-width: 700px) {
+    #container-comparare {
+        padding: 0.5rem 0.75rem;
+        gap: 0.5rem;
+        flex-wrap: nowrap;
+
+        .comparare-label {
+            display: none;
+        }
+
+        .comparare-produse {
+            gap: 0.4rem;
+            min-width: 0;
+        }
+
+        .comparare-entry {
+            padding: 0.3rem 0.5rem;
+            min-width: 0;
+
+            .comparare-name {
+                font-size: 0.78rem;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-width: 90px;
+            }
+        }
+
+        .comparare-afiseaza {
+            font-size: 0.82rem;
+            padding: 0.3rem 0.6rem;
+            white-space: nowrap;
+        }
+    }
+
+    body.has-comparare {
+        padding-bottom: 60px;
+    }
+}
+
+.btn-comparare {
+    &:disabled {
+        opacity: 0.45;
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+}

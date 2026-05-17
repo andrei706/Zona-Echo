@@ -47,18 +47,17 @@
 #galerie-animata .grid-galerie-4 figcaption {
   position: absolute;
   bottom: 0;
-  background: rgba(255, 255, 255, 0.7);
+  background: var(--culoare-fundal);
+  color: var(--culoare-text);
   width: 100%;
   text-align: center;
   padding: 2.5px 0;
   font-size: 0.6rem;
-  box-sizing: border-box;
 }
 
 #galerie-animata .grid-galerie-4 img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
   display: block;
 }
 
@@ -161,18 +160,17 @@
 #galerie-animata .grid-galerie-9 figcaption {
   position: absolute;
   bottom: 0;
-  background: rgba(255, 255, 255, 0.7);
+  background: var(--culoare-fundal);
+  color: var(--culoare-text);
   width: 100%;
   text-align: center;
   padding: 1.6666666667px 0;
   font-size: 0.4rem;
-  box-sizing: border-box;
 }
 
 #galerie-animata .grid-galerie-9 img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
   display: block;
 }
 
@@ -365,18 +363,17 @@
 #galerie-animata .grid-galerie-16 figcaption {
   position: absolute;
   bottom: 0;
-  background: rgba(255, 255, 255, 0.7);
+  background: var(--culoare-fundal);
+  color: var(--culoare-text);
   width: 100%;
   text-align: center;
   padding: 1.25px 0;
   font-size: 0.3rem;
-  box-sizing: border-box;
 }
 
 #galerie-animata .grid-galerie-16 img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
   display: block;
 }
 
